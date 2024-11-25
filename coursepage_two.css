@@ -1,0 +1,210 @@
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%; 
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    font-weight: 400;
+    font-style: normal;
+    overflow: scroll;
+}
+
+.container{
+    height: auto; 
+    width: 90%; 
+    /* center horizontal */
+    margin: auto auto;
+}
+
+
+#searchboxcontainer {
+    border-style: solid;
+    text-align: center; 
+    margin: auto auto; 
+    padding-bottom: 1%; 
+    padding-top: 1%;
+    background-color: #EEEEEE;
+    font-size: 1em; 
+    width: 80%;
+}
+
+#searchbox{
+    width: 80%; 
+}
+
+#advancedsearchtable{
+    /* make all the cells the same width */
+    table-layout: fixed;
+    width: 100%; 
+}
+
+#prerequisites{
+    width: 100%; 
+}
+
+#coursenameandreview{
+    text-align: center; 
+    padding-top: 1%;
+    font-size: 1.5em;
+}
+
+#disclaimerandreview{
+    font-size: 0.5em;
+}
+
+#disclaimer{
+    color: red;
+}
+
+#review{
+    margin: 0;
+    color: #2B78E4;
+}
+
+.review{
+    background-color: #2B78E4; 
+    font-size: 1em;
+}
+
+.review:hover {
+    background-color: #0056b3;
+}
+
+#generalcourseinformationcontainer{
+    margin: auto;
+    /* keep on the same line */
+    display: flex; 
+    /* center the contents inside it */
+    justify-content: center;
+    gap: 20px;
+    width: 75%; 
+    padding-top: 1%;
+}
+
+.boxeswithmediumrating{
+    border-style: solid;
+    background-color: #FFE599;
+    width: 15%;
+}
+
+.boxeswithgoodrating{
+    border-style: solid;
+    background-color: #B6D7A8;
+    width: 15%;
+}
+
+.vote{
+    font-size: 1em;
+    text-align: center;
+}
+
+.boxtext{
+    font-size: 0.5em;
+    text-align: center; 
+}
+
+#generalcourseinformation{
+    border-style: solid;
+    width: 15%;
+}
+
+#courseinformationcontainer{
+    border-style: solid;
+    margin-top: 1%; 
+}
+
+#courseinformationchart{
+    display: flex; 
+    justify-content: space-between; 
+    height: 100%; 
+}
+
+.professorname{
+    border-style: solid; 
+    background-color: #DDDDDD;
+    text-align: center; 
+}
+
+.courseinformationline{
+    display: flex; 
+    justify-content: center; 
+    gap: 10%; 
+    padding-top: 1%; 
+}
+
+.boxeswithbestrating{
+    background-color: #6AA84F;
+    border-style: solid;
+    width: 15%
+}
+
+.box{
+    border-style: solid;
+    text-align: center; 
+    font-size: 0.5em; 
+}
+
+.piechart{
+    height: 100px; 
+    width: 100px; 
+    border-radius: 50%; 
+    background: conic-gradient(yellow 0.00% 45%, 
+    #EA9999 45% 57%, 
+    #E06666 57% 69%, 
+    #CF2A27 69% 95%,
+    #93C47D 95% 100%)
+}
+
+.additionalcomments{
+    border-style: solid;
+    background-color: #DDDDDD;
+    margin-top: 1%; 
+}
+
+.color-legend{
+    height: 10%; 
+    width: 10%; 
+}
+
+.homework{
+    background-color: yellow;
+}
+
+.exam1{
+    background-color: #EA9999
+}
+
+.exam2{
+    background-color: #E06666;
+}
+
+.exam3{
+    background-color: #CF2A27;
+}
+
+.attendance{
+    background-color: #93C47D;
+}
+/* table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  } */
+
+.onecourse{
+    border-style: solid;
+    justify-content: center; 
+    width: 50%; 
+    box-sizing: border-box; 
+    height: 100%; 
+}
+
+#coursesandprofessors{
+    /* https://www.w3schools.com/css/css_positioning.asp */
+    position: fixed; 
+    left: 0;
+}
