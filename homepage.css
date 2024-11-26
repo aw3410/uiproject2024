@@ -1,0 +1,120 @@
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    background-color: #EEEEEE;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow: scroll;
+}
+
+#layout {
+    display: flex;
+    height: 100%;
+}
+
+header.websitename{
+    font-size: 1.5em; 
+}
+
+#content {
+    /* push everything else to the right */
+    margin-left: 10%;
+    width: 100%; 
+}
+
+.container {
+    height: auto;
+    width: 90%;
+    /* center horizontal */
+    margin: auto auto;
+}
+
+
+#searchboxcontainer {
+    border-style: solid;
+    text-align: center;
+    margin: auto auto;
+    justify-content: center; 
+    align-items: center; 
+    padding-bottom: 1%;
+    padding-top: 1%;
+    /* original background */
+    /* background-color: #EEEEEE; */
+    /* blue background */
+    background-color: #003865;
+    color: white; 
+    font-size: 1em;
+    width: 80%;
+}
+
+#searchbox {
+    width: 80%;
+}
+
+#homepagetext{
+    text-align: center; 
+    margin: auto auto; 
+}
+
+#entersearchquery {
+    color: #B3B3B3;
+}
+
+#leaveareview{
+    color: #757171;
+}
+
+#reviewbutton{
+    background-color: #B3B3B3;
+    color: white; 
+}
+
+#reviewbutton:hover {
+    color: white; 
+    background-color: #757171;
+}
+
+/* SIDEBAR CSS */
+ /* https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp */
+
+#coursesandprofessorssidebar {
+    /* https://www.w3schools.com/css/css_positioning.asp */
+    position: fixed;
+    border-style: solid;
+    width: 10%;
+    /* original background */
+    /* background-color: #EEEEEE; */
+    /* blue background */
+    background-color: #003865; 
+    color: white;
+    border-color: black; 
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+}
+
+#courseandprof {
+    border-style: solid; 
+    height: 8%; 
+    border-color: black; 
+    padding: 5%; 
+}
+
+.coursesandprofessorscollapsable{
+    border-style: solid; 
+    padding: 5%; 
+    border-color: black;
+    background-color: hsl(204, 50%, 62%);
+}
+
+.collaspablebutton{
+    border-width: 0;
+    background-color: hsl(204, 50%, 62%);
+    color: white; 
+}

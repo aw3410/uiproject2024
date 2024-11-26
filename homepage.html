@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="homepage.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <title>What CULPA Doesn't Tell You - CS Edition</title>
+</head>
+
+<body>
+    <div id="layout">
+        <!-- SIDEBAR -->
+        <div id="coursesandprofessorssidebar">
+            <div id="courseandprof">
+                Courses and Professors
+            </div>
+            <div id=coursesidebar>
+                <div class="coursesandprofessorscollapsable">Courses
+                    <button type="button" class="collaspablebutton">+</button>
+                </div>
+            </div>
+            <div id="professorsidebar">
+                <div class="coursesandprofessorscollapsable">Professors
+                    <button type="button" class="collaspablebutton">+</button>
+                </div>
+            </div>
+        </div>
+        <!-- CONTENT -->
+        <div id="content">
+            <!-- SEARCHBOX -->
+            <div id="searchboxcontainer" class="container">
+                <article role="article" data-focusible="true" tabindex="0">
+                    <div>
+                        <header class="websitename">What Culpa Doesn't Tell You - CS Edition</header>
+                    </div>
+                    <div>
+                        <span id="searchboxlinetwo">
+                            <input type="text" id="searchbox" placeholder="search">
+                            <button type="button" id="filterbutton">Filter</button>
+                            <!-- TODO: make it collapsable -->
+                            <!-- https://www.w3schools.com/howto/howto_js_collapsible.asp#gsc.tab=0 -->
+                        </span>
+                    </div>
+                </article>
+            </div>
+            <div id="homepagetext">
+                <article role="article" data-focusible="true" tabindex="0"></article>
+                <div id="entersearchquery">
+                    <p>Enter a search query or choose a course or professor from the sidebar to your desired course
+                        information!</p>
+                </div>
+                <div id="leaveareview">
+                    <h2>Want to leave a review for a course or a professor?</h2>
+                    <button type="button" id="reviewbutton">Click here!</button>
+                </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
