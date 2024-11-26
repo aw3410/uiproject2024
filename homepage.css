@@ -73,6 +73,9 @@ header.websitename{
 #reviewbutton{
     background-color: #B3B3B3;
     color: white; 
+    padding: 1%; 
+    border-style: none; 
+    border-radius: 25px; 
 }
 
 #reviewbutton:hover {
