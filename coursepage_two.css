@@ -3,12 +3,12 @@ html {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     height: 100%;
+    background-color: #EEEEEE;
+    /* background-color: hsl(204, 10%, 62%); */
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--white);
-    color: var(--black);
     font-weight: 400;
     font-style: normal;
     overflow: scroll;
@@ -17,6 +17,10 @@ body {
 #layout {
     display: flex;
     height: 100%;
+}
+
+header.websitename{
+    font-size: 1.5em; 
 }
 
 #content {
@@ -36,9 +40,15 @@ body {
     border-style: solid;
     text-align: center;
     margin: auto auto;
+    justify-content: center; 
+    align-items: center; 
     padding-bottom: 1%;
     padding-top: 1%;
-    background-color: #EEEEEE;
+    /* original background */
+    /* background-color: #EEEEEE; */
+    /* blue background */
+    background-color: #003865;
+    color: white; 
     font-size: 1em;
     width: 80%;
 }
@@ -47,10 +57,24 @@ body {
     width: 80%;
 }
 
+#advancedsearch{
+    background-color: #B3B3B3; 
+    width: 85%; 
+    align-items: center; 
+    margin-left: 7.5%; 
+    color: black; 
+    font-size: 0.8em; 
+}
+
+#prerequisites{
+   font-size: 0.5em; 
+}
+
 #advancedsearchtable {
     /* make all the cells the same width */
     table-layout: fixed;
     width: 100%;
+    font-size: 0.8em; 
 }
 
 #prerequisites {
@@ -81,12 +105,12 @@ body {
 }
 
 #contentreviewbutton{
-    background-color: #2B78E4;
+    background-color: #9bcbeb;
 }
 
 #contentreviewbutton:hover {
     color: white; 
-    background-color: #0056b3;
+    background-color: #003865;
 }
 
 #generalcourseinformationcontainer {
@@ -125,6 +149,7 @@ body {
 #generalcourseinformation {
     border-style: solid;
     width: 15%;
+    background-color: white; 
 }
 
 #courseinformationcontainer {
@@ -136,11 +161,17 @@ body {
     display: flex;
     justify-content: space-between;
     height: 100%;
+    background-color: white; 
 }
 
 .professorname {
     border-style: solid;
-    background-color: #DDDDDD;
+    /* original background */
+    /* background-color: #DDDDDD; */
+    /* blue background */
+    background-color: #003865;
+    color: white; 
+    border-color: black; 
     text-align: center;
 }
 
@@ -176,7 +207,11 @@ body {
 
 .additionalcomments {
     border-style: solid;
-    background-color: #DDDDDD;
+    background-color: #003865;
+    color: white; 
+    border-color: black;
+    /* original background */
+    /* background-color: #DDDDDD; */
     margin-top: 1%;
 }
 
@@ -205,11 +240,6 @@ body {
     background-color: #93C47D;
 }
 
-/* table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  } */
-
 .onecourse {
     border-style: solid;
     justify-content: center;
@@ -226,43 +256,72 @@ body {
     position: fixed;
     border-style: solid;
     width: 10%;
-    background-color: #EEEEEE;
+    /* original background */
+    /* background-color: #EEEEEE; */
+    /* blue background */
+    background-color: #003865; 
+    color: white;
+    border-color: black; 
     margin: 0;
     padding: 0;
-    width: 10%;
     height: 100%; 
 }
 
 #courseandprof {
     border-style: solid; 
-    height: 10%; 
+    height: 8%; 
+    border-color: black; 
+    padding: 5%; 
 }
 
 #coursesandprofessorscontainer a {
     display: block;
     padding: 10%;
     text-decoration: none;
-    color: black;
+    /* original background */
+    /* color: black; */
+    /* blue background */
+    border-color: black; 
+    color: white; 
     border-style: solid;
     font-size: 0.5em; 
 }
   
 #coursesandprofessorscontainer a.active {
-    background-color: #999999;
+    /* original background */
+    /* background-color: #999999; */
+    /* blue background */
+    background-color: #9bcbeb;
+    color: black;
+   
 }
 
 .coursesandprofessorscollapsable{
     border-style: solid; 
+    padding: 5%; 
+    border-color: black;
+    background-color: hsl(204, 50%, 62%);
 }
 
 .missing{
     color: red; 
     border-style: solid; 
     border-color: black; 
-    font-size: 0.5em; 
+    font-size: 0.8em; 
     padding: 10%;
+    font-weight: bold; 
 }
 
-.button .review{
-    font-size: 0.
+.collaspablebutton{
+    border-width: 0;
+    background-color: hsl(204, 50%, 62%);
+    color: white; 
+}
+
+#coursesandprofessorscontainer a.missinglink{
+    border-style: none; 
+    color: red; 
+    font-size: 0.8em; 
+    padding: 0; 
+    font-weight: bold; 
 }
