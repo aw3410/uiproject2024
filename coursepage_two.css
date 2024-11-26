@@ -252,7 +252,7 @@ header.websitename{
 /* SIDEBAR CSS */
  /* https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp */
 
-#coursesandprofessorscontainer {
+#coursesandprofessorssidebar {
     /* https://www.w3schools.com/css/css_positioning.asp */
     position: fixed;
     border-style: solid;
