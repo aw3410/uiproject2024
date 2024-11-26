@@ -239,7 +239,7 @@ header.websitename{
     padding: 5%; 
 }
 
-#coursesandprofessorscontainer a {
+#coursesandprofessorssidebar a {
     display: block;
     padding: 10%;
     text-decoration: none;
@@ -252,7 +252,7 @@ header.websitename{
     font-size: 0.5em; 
 }
   
-#coursesandprofessorscontainer a.active {
+#coursesandprofessorssidebar a.active {
     /* original background */
     /* background-color: #999999; */
     /* blue background */
@@ -283,7 +283,7 @@ header.websitename{
     color: white; 
 }
 
-#coursesandprofessorscontainer a.missinglink{
+#coursesandprofessorssidebar a.missinglink{
     border-style: none; 
     color: red; 
     font-size: 0.8em; 
