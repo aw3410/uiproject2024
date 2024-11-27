@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="coursereview.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
+
+    <title>What CULPA Doesn't Tell You - CS Edition</title>
+</head>
+
+<body>
+    <span class="firstandlastline coursefeedbackformline">
+
+        <h2>Course Feedback Form</h2>
+        <!-- https://www.w3schools.com/howto/howto_css_icon_buttons.asp -->
+        <button id="homebutton"><i class="fa fa-home"></i></button>
+    </span>
+    <span class="coursefeedbackformline">
+        <!-- https://www.w3schools.com/tags/tag_datalist.asp -->
+        <!-- <label for "Courses">Courses:</label> -->
+        <input list="dropdowncourses" name="courses" class="dropdowninput" placeholder="Course">
+        <datalist id="dropdowncourses">
+            <option value="COMS1004: Introduction to Computer Science/ Programming in Java">
+            <option value="COMS3203: Discrete Mathematics">
+        </datalist>
+        <!-- <label for "professors">Professors:</label> -->
+        <input list="dropdownprofessors" name="professors" class="dropdowninput" placeholder="Professor">
+        <datalist id="dropdownprofessors">
+            <option value="Paul Blaer">
+            <option value="Adam Cannon">
+        </datalist>
+        <!-- <label for "semesters">Semester:</label> -->
+        <input list="dropdownsemesters" name="semesters" class="dropdowninput" placeholder="Semester">
+        <datalist id="dropdownsemesters">
+            <option value="Fall 2023">
+            <option value="Spring 2024">
+        </datalist>
+    </span>
+    <div id="examorproject">
+        <label for "examorprojectdropdown">Was the class exam or project based?</label>
+        <div class="addspace">
+            <select id="examorprojectdropdown">
+                <option value="" selected disabled hidden>Select</option>
+                <option value="exambased">Exam-Based</option>
+                <option value="projectbased">Project-Based</option>
+                <option value="both">Both</option>
+                <option value="neither">Neither</optionv>
+            </select>
+        </div>
+    </div>
+    <div class="ratescale">
+        <label for "rate10">How would you rate this professor?</label>
+        <table class="rate10">
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+            <tr></tr>
+                <td>the worst</td>
+                <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio -->
+                <td><input type = "radio" value="1"></td>
+                <td><input type = "radio" value="2"></td>
+                <td><input type = "radio" value="3"></td>
+                <td><input type = "radio" value="4"></td>
+                <td><input type = "radio" value="5"></td>
+                <td><input type = "radio" value="6"></td>
+                <td><input type = "radio" value="7"></td>
+                <td><input type = "radio" value="8"></td>
+                <td><input type = "radio" value="9"></td>
+                <td><input type = "radio" value="10"></td>
+                <td>the best</td>
+            </tr>
+        </table>
+    </div>
+    <div class="ratescale">
+        <label for "rate5">In your opinion, was the class useful/relevant for industry work?</label>
+        <table class="rate5">
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td></td>
+            </tr>
+            <tr></tr>
+                <td>not at all relevant</td>
+                <td><input type = "radio" value="1"></td>
+                <td><input type = "radio" value="2"></td>
+                <td><input type = "radio" value="3"></td>
+                <td><input type = "radio" value="4"></td>
+                <td><input type = "radio" value="5"></td>
+                <td>highly relevant</td>
+            </tr>
+        </table>
+    </div>
+    <div class="ratescale">
+        <label for "rate10">Rate the difficulty of the class</label>
+        <table class="rate10">
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+            <tr></tr>
+                <td>easy</td>
+                <td><input type = "radio" value="1"></td>
+                <td><input type = "radio" value="2"></td>
+                <td><input type = "radio" value="3"></td>
+                <td><input type = "radio" value="4"></td>
+                <td><input type = "radio" value="5"></td>
+                <td><input type = "radio" value="6"></td>
+                <td><input type = "radio" value="7"></td>
+                <td><input type = "radio" value="8"></td>
+                <td><input type = "radio" value="9"></td>
+                <td><input type = "radio" value="10"></td>
+                <td>impossible</td>
+            </tr>
+        </table>
+    </div>
+    <div id = "weeklyworkload">
+        <label for "weeklyworkloadtable">What was the weekly workload for the class?</label>
+        <table id = "weeklyworkloadtable">
+            <tr>
+                <td><input type = "radio" value = "0-3">0-3 hours</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" value = "3-6">3-6 hours</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" value = "6-9">6-9 hours</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" value = "9-12">9-12 hours</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" value = "12">12+ hours</td>
+            </tr>
+        </table>
+    </div>
+    <div id = "generalcourseinformation">
+        <table id = "generalcourseinformationtable">
+            <tr>
+                <td class = "columnone">Were the grades curved?</td>
+                <td class = "columntwo"><input type = "radio" value = "yes">Yes</td>
+                <td class = "columnthree"><input type = "radio" value = "no">No</td>
+            </tr>
+            <tr>
+                <td class = "columnone">Are class recordings available to all students?</td>
+                <td class = "columntwo"><input type = "radio" value = "yes">Yes</td>
+                <td class = "columnthree"><input type = "radio" value = "no">No</td>
+            </tr>
+            <tr>
+                <td class = "columnone">Was attendance graded?</td>
+                <td class = "columntwo"><input type = "radio" value = "yes">Yes</td>
+                <td class = "columnthree"><input type = "radio" value = "no">No</td>
+            </tr>
+        </table>
+    </div>
+    <div id = "additionalcomments" class = "addspace">
+        <label for "additionalcommentsinput">Is there anything unique about this class you'd like to share? Any additional comments?</label>
+        <div class="addspace">
+            <input type = "text" id = "additionalcommentsinput">
+        </div>
+    </div>
+    <div id = "uploadfile">
+        <label for="file">Would you like to upload your syllabus:</label>
+        <input type="file" id="file" name="file">
+        <button type="submit">Upload</button>
+    </div>
+    <span class = "coursefeedbackformline submitline">
+        <button id="gotohomepage"><i class="fa fa-home"></i>Go to Homepage</button>
+        <button type="submit" id = "submitbutton">Submit</button>
+    </span>
+</body>

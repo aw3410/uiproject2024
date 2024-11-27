@@ -1,0 +1,148 @@
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    background-color: #EEEEEE;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow: scroll;
+    width: 50%; 
+    align-items: center; 
+    margin: auto auto; 
+    border-style: solid;
+}
+
+.coursefeedbackformline{
+    align-items: center; 
+    display: flex;
+    justify-content: center;
+    padding: 1%; 
+    gap: 5%; 
+}
+
+.firstandlastline{
+    background-color: #003865;
+    color: white
+}
+
+h2{
+    text-align: center; 
+}
+
+#homebutton{
+    border-style: none; 
+    font-size: 200%; 
+    background-color: #003865;
+    color: white; 
+}
+
+.dropdowninput{
+    border-radius: 25px; 
+    padding: 1%;
+    border-color: red; 
+    width: 30%; 
+}
+
+#examorproject{
+    align-items: left;
+    text-align: left;
+    margin: 1%; 
+    padding-bottom: 1%; 
+}
+
+#examorprojectdropdown{
+    width: 20%;
+}
+
+.addspace{
+    padding-top: 1%;
+}
+
+.ratescale{
+    align-items: left;
+    text-align: left;
+    margin: 1%; 
+    padding-bottom: 1%; 
+}
+
+.rate10{
+    width: 100%; 
+    padding-top: 1%;
+}
+
+.rate10 td{
+    width: 8%; 
+    text-align: center; 
+}
+
+label{
+    font-size: 1.15em; 
+}
+
+.rate5{
+    width: 100%; 
+    padding-top: 1%; 
+}
+
+.rate5 td{
+    width: 14%; 
+    text-align: center; 
+}
+
+#weeklyworkload{
+    margin: 1%; 
+}
+
+#weeklyworkloadtable{
+    padding-top: 1%;
+}
+
+#generalcourseinformation{
+    margin: 1%;
+}
+
+#generalcourseinformationtable .columnone{
+    width: 30%; 
+}
+
+#generalcourseinformationtable .columntwo{
+    width: 5%; 
+}
+
+#generalcourseinformationtable .columnthree{
+    width: 30%; 
+    align-items: left; 
+}
+
+#additionalcomments{
+    margin: 1%; 
+}
+
+#additionalcommentsinput{
+    width: 80%;
+}
+
+#uploadfile{
+    margin: 1%;
+}
+
+#gotohomepage{
+    padding: 1%; 
+}
+
+#submitbutton{
+    padding: 1%; 
+    background-color: #9bcbeb;
+}
+
+.submitline{
+    gap: 2%; 
+    background-color: #003865;
+    color: white; 
+}
+
