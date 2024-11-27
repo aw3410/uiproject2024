@@ -63,6 +63,87 @@ header.websitename{
     font-size: 1.5em;
 }
 
+#professorrating{
+    font-size: 0.7em; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    width: 100%; 
+    margin-top: 2%; 
+}
+
+#averagestar{
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+.fa-star{
+    color: #003865;
+}
+
+.fa-star-half-full{
+    color: #003865; 
+}
+
+#professorratingtablecontainer{
+    width: 50%; 
+    margin-left: 25%; 
+    border-collapse: collapse;
+    padding: 1%; 
+    font-size: 0.8em;
+}
+
+tbody{
+    width: 100%; 
+}
+
+#professorratingtable tr{
+    width: auto; 
+}
+
+#professorratingtable{
+    width: 100%; 
+    text-align: center; 
+}
+
+.stars{
+    width: 10%; 
+    text-align: left; 
+}
+
+.votecount{
+    width: 20%; 
+    text-align: left; 
+    padding-left: 1%; 
+
+}
+
+.barcontainer{ 
+    width: 100%; 
+    background-color: #f1f1f1;
+    text-align: center;
+    color: black;
+    border-style: solid; 
+    text-align: center; 
+    height: 20px;  
+    position: relative; 
+}
+
+.bar5{
+    align-items: left; 
+    width: 50%; 
+    background-color: #9bcbeb;
+    height: 100%; 
+}
+
+.bar4{
+    align-items: left; 
+    width: 50%; 
+    background-color: #9bcbeb;
+    height: 100%;
+}
+
+
 #disclaimerandreview {
     font-size: 0.5em;
 }
@@ -151,9 +232,10 @@ header.websitename{
 
 .courseinformationline {
     display: flex;
-    justify-content: center;
-    gap: 10%;
+    justify-content: space-evenly;
+    gap: 8%;
     padding-top: 1%;
+    width: 100%; 
 }
 
 .boxeswithbestrating {

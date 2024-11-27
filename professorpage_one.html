@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="professorpage_one.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <title>What CULPA Doesn't Tell You - CS Edition</title>
@@ -73,6 +74,49 @@
         <div id="professornameandreview">
             <article role="article" data-focusible="true" tabindex="0">
                 <header>Professor Adam Cannon</header>
+                <div id="professorrating">
+                    <!-- https://www.w3schools.com/howto/howto_css_user_rating.asp -->
+                    <span class="professorratingheading">Professor Rating</span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star-half-full"></span>
+                    <p id = "averagestar">4.5 average based on 2 reviews.</p>
+                    <div id = "professorratingtablecontainer">
+                        <table id=="professorratingtable" class = "courseinformationline">
+                            <tr>
+                                <td class = "stars">5 Stars</td>
+                                <td class = "barcontainer">
+                                    <div class="bar5"></div>
+                                </td>
+                                <td class = "votecount">1</td>
+                            </tr>
+                            <tr>
+                                <td class = "stars">4 Stars</td>
+                                <td class = "barcontainer">
+                                    <div class = "bar4"></div>
+                                </td>
+                                <td class = "votecount">1</td>
+                            </tr>
+                            <tr>
+                                <td class = "stars">3 Stars</td>
+                                <td class="barcontainer bar3"></td>
+                                <td class = "votecount">0</td>
+                            </tr>
+                            <tr>
+                                <td class = "stars">2 Stars</td>
+                                <td class="barcontainer bar2"></td>
+                                <td class = "votecount">0</td>
+                            </tr>
+                            <tr>
+                                <td class = "stars">1 Stars</td>
+                                <td class="barcontainer bar1"></td>
+                                <td class = "votecount">0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
                 <div id="disclaimerandreview">
                     <p id="disclaimer">Disclaimer: Professor policies may have changed. This information is from past
                         students
