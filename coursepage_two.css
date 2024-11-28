@@ -162,7 +162,11 @@ header.websitename{
     display: flex;
     justify-content: space-between;
     height: 100%;
-    background-color: white; 
+    /* ORIGINAL */
+    /* background-color: white;  */
+    /* TO FIX WHITE GAP */
+    background-color: #003865;
+
 }
 
 .professorname {
@@ -178,9 +182,10 @@ header.websitename{
 
 .courseinformationline {
     display: flex;
-    justify-content: center;
-    gap: 10%;
+    justify-content: space-evenly;
+    gap: 8%;
     padding-top: 1%;
+    width: 100%; 
 }
 
 .boxeswithbestrating {
@@ -195,6 +200,15 @@ header.websitename{
     font-size: 0.5em;
 }
 
+.semester{
+    width: 20%; 
+}
+
+.third{
+    width: 25%; 
+    padding: 1%; 
+}
+
 .piechart {
     height: 100px;
     width: 100px;
@@ -207,13 +221,20 @@ header.websitename{
 }
 
 .additionalcomments {
-    border-style: solid;
     background-color: #003865;
     color: white; 
-    border-color: black;
+    /* ORIGINAL - WITH WHITE GAP */
+    /* border-style: solid;
+    border-color: black; */
     /* original background */
     /* background-color: #DDDDDD; */
     margin-top: 1%;
+    height: 100%; 
+}
+
+.additionalcomments td{
+    font-size: 0.8em; 
+
 }
 
 .color-legend {
@@ -242,11 +263,17 @@ header.websitename{
 }
 
 .onecourse {
-    border-style: solid;
     justify-content: center;
     width: 50%;
     box-sizing: border-box;
     height: 100%;
+    /* ORIGINAL - with white gap */
+    /* border-style: solid; */
+    /* TO FIX WHITE GAP */
+    background-color: white; 
+    border-left-style: solid; 
+    border-left-width: 2px;
+    border-right-style: solid; 
 }
 
 /* SIDEBAR CSS */
