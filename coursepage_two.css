@@ -25,7 +25,7 @@ header.websitename{
 
 #content {
     /* push everything else to the right */
-    margin-left: 10%;
+    margin-left: 13%;
 }
 
 .container {
@@ -256,7 +256,7 @@ header.websitename{
     /* https://www.w3schools.com/css/css_positioning.asp */
     position: fixed;
     border-style: solid;
-    width: 10%;
+    width: 12%;
     /* original background */
     /* background-color: #EEEEEE; */
     /* blue background */
@@ -270,14 +270,14 @@ header.websitename{
 
 #courseandprof {
     border-style: solid; 
-    height: 8%; 
+    height: 7%; 
     border-color: black; 
     padding: 5%; 
 }
 
 #coursesandprofessorssidebar a {
     display: block;
-    padding: 10%;
+    padding: 8%;
     text-decoration: none;
     /* original background */
     /* color: black; */
@@ -285,7 +285,7 @@ header.websitename{
     border-color: black; 
     color: white; 
     border-style: solid;
-    font-size: 0.5em; 
+    font-size: 0.8em; 
 }
   
 #coursesandprofessorssidebar a.active {
