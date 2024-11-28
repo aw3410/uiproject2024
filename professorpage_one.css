@@ -102,7 +102,7 @@ tbody{
 }
 
 #professorratingtable{
-    width: 100%; 
+    width: 90%; 
     text-align: center; 
 }
 
@@ -112,9 +112,10 @@ tbody{
 }
 
 .votecount{
-    width: 20%; 
+    width: 30%; 
     text-align: left; 
     padding-left: 1%; 
+    white-space: nowrap;
 
 }
 
@@ -302,7 +303,7 @@ tbody{
     /* https://www.w3schools.com/css/css_positioning.asp */
     position: fixed;
     border-style: solid;
-    width: 10%;
+    width: 13%;
     /* original background */
     /* background-color: #EEEEEE; */
     /* blue background */
@@ -312,18 +313,19 @@ tbody{
     margin: 0;
     padding: 0;
     height: 100%; 
+    overflow: visible;
 }
 
 #courseandprof {
     border-style: solid; 
-    height: 8%; 
+    height: 7%; 
     border-color: black; 
     padding: 5%; 
 }
 
 #coursesandprofessorssidebar a {
     display: block;
-    padding: 10%;
+    padding: 8%;
     text-decoration: none;
     /* original background */
     /* color: black; */
@@ -331,7 +333,7 @@ tbody{
     border-color: black; 
     color: white; 
     border-style: solid;
-    font-size: 0.5em; 
+    font-size: 0.8em; 
 }
   
 #coursesandprofessorssidebar a.active {
