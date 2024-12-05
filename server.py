@@ -6,9 +6,9 @@ app = Flask(__name__)
 def home():
     return render_template('homepage.html')
 
-@app.route('/reviewinput')
+@app.route('/reviewform')
 def inputreview(): 
-    return render_template('coursereview.html')
+    return render_template('reviewform.html')
 
 @app.route('/professorpage')
 def professorpage(): 
