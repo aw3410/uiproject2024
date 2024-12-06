@@ -10,11 +10,11 @@ def home():
 def inputreview(): 
     return render_template('reviewform.html')
 
-@app.route('/professorpage')
+@app.route('/professor')
 def professorpage(): 
     return render_template('professorpage_one.html')
 
-@app.route('/coursepage')
+@app.route('/course')
 def coursepage(): 
     return render_template('coursepage_two.html')
 
