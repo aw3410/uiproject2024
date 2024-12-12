@@ -367,7 +367,7 @@ tbody{
    
 }
 
-.coursesandprofessorscollapsable{
+.coursesandprofessorscollapsible{
     border-style: solid; 
     padding: 5%; 
     border-color: black;
@@ -383,7 +383,7 @@ tbody{
     font-weight: bold; 
 }
 
-.collaspablebutton{
+.collapsiblebutton{
     border-width: 0;
     background-color: hsl(204, 50%, 62%);
     color: white; 
@@ -395,4 +395,12 @@ tbody{
     font-size: 0.8em; 
     padding: 0; 
     font-weight: bold; 
+}
+
+.hidden {
+    display: none;
+}
+
+.collapsibletextsize{ 
+    font-size: 1em; 
 }
