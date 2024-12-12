@@ -69,6 +69,7 @@ header.websitename{
 
 #prerequisites{
    font-size: 0.5em; 
+   width: 100%;
 }
 
 #advancedsearchtable {
@@ -76,10 +77,6 @@ header.websitename{
     table-layout: fixed;
     width: 100%;
     font-size: 0.8em; 
-}
-
-#prerequisites {
-    width: 100%;
 }
 
 #coursenameandreview {
