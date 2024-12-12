@@ -13,8 +13,6 @@ function advancedsearch() {
 
 
 $(document).ready(function () {
-    console.log("Document ready!");
-
     $('#filterbutton').click(function () {
         console.log("Filter button clicked!");
         advancedsearch();
