@@ -1,0 +1,72 @@
+{
+	"courseCodeAndName": "COMS 1004: Introduction to Computer Science / Programming in Java",
+	"industryRelevanceAverage": 3.5,
+	"industryRelevanceMaxRating": 5,
+	"industryRelevanceTotalScore": 7,
+	"industryRelevanceTotalVotes": 2,
+	"level": "Undergraduate",
+	"requirement": "Core",
+	"prerequisites": null,
+	"semestersOffered": ["Fall", "Summer", "Spring"],
+	"professors": [{
+		"professorName": "Paul Blaer",
+		"ratingAverage": 9,
+		"ratingMaxRating": 10,
+		"ratingTotalScore": 18,
+		"ratingTotalVotes": 2,
+		"curve": true,
+		"difficultyAverage": 3,
+		"difficultyMaxRating": 10,
+		"difficultyTotalScore": 6,
+		"difficultyTotalVotes": 2,
+		"semester": ["Fall"],
+		"examsProjectsBases": ["Exams"],
+		"attendance": "Graded",
+		"recordings": null,
+		"latestLogisticsSemester": "Fall",
+		"latestLogisticsSemesterYear": 2023,
+		"greadsBreakdown": [{
+				"component": "Homework",
+				"percentage": 45
+			},
+			{
+				"component": "Midterm1",
+				"percentage": 12
+			},
+			{
+				"component": "Midterm2",
+				"percentage": 12
+			},
+			{
+				"component": "final",
+				"percentage": 26
+			},
+			{
+				"component": "attendance",
+				"percentage": 5
+			}
+		],
+		"workload": [{
+				"workloadHours": "0-3 Hours",
+				"votes": 1
+			},
+			{
+				"workloadHours": "3-6 Hours",
+				"votes": 0
+			},
+			{
+				"workloadHours": "6-9 Hours",
+				"votes": 1
+			},
+			{
+				"workloadHours": "9-12 Hours",
+				"votes": 1
+			},
+			{
+				"workloadHours": "12+ Hours",
+				"votes": 1
+			}
+		]
+
+	}]
+}
