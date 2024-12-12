@@ -8,7 +8,7 @@
     <link rel="stylesheet" href=" {{ url_for ('static', filename = 'homepage.css') }}" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="{{ url_for('static', filename = 'homepage.js')}}"></script>
+    <script src="{{ url_for('static', filename = 'homepage.js')}}"></script>
 
     <title>What CULPA Doesn't Tell You - CS Edition</title>
 </head>
@@ -21,13 +21,44 @@
                 Courses and Professors
             </div>
             <div id=coursesidebar>
-                <div class="coursesandprofessorscollapsable">Courses
-                    <button type="button" class="collaspablebutton">+</button>
+                <div class="coursesandprofessorscollapsible">
+                    <button type="button" id='coursebutton' class="collapsiblebutton collapsibletextsize">Courses
+                        +</button>
+                </div>
+                <div id = "listofcourses" class="hidden">
+                    <a class="active" href="#coms1004">COMS1004: Introduction to Computer Science/ Programming in
+                        Java</a>
+                    <a href="#coms3203">COMS3203: Discrete Mathemetatics
+                        <button type="button" class="reviewbutton">Leave a Review</button>
+                    </a>
+                    <a href="coms4701">COMS4701: Artificial Intelligence
+                        <button type="button" class="reviewbutton">Leave a Review</button>
+                    </a>
+                    <div class="missing">Course Missing?
+                        <a class="missinglink" href="#missingreview">Leave a Review</a>
+                        <!-- <button type="button" class="reviewbutton">Leave a Review</button> -->
+                    </div>
                 </div>
             </div>
             <div id="professorsidebar">
-                <div class="coursesandprofessorscollapsable">Professors
-                    <button type="button" class="collaspablebutton">+</button>
+                <div class="coursesandprofessorscollapsible">
+                    <button type="button" id='professorbutton' class="collapsiblebutton collapsibletextsize">Professors
+                        +</button>
+                </div>
+                <div id = "listofprofessors" class="hidden">
+                    <a href="#blaer">Paul Blaer
+                        <button type="button" class="reviewbutton">Leave a Review</button>
+                    </a>
+                    <a href="#cannon">Adam Cannon
+                        <button type="button" class="reviewbutton">Leave a Review</button>
+                    </a>
+                    <a href="#dear">Tony Dear
+                        <button type="button" class="reviewbutton">Leave a Review</button>
+                    </a>
+                    <div class="missing">Professor Missing?
+                        <!-- <button type="button" class="reviewbutton missing">Leave a Review</button> -->
+                        <a class="missinglink" href="#missingreview">Leave a Review</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,141 +75,143 @@
                             <input type="text" id="searchbox" placeholder="search">
                             <button type="button" id="filterbutton">Filter</button>
                             <button type="button" id="search">Search</button>
-                            <!-- TODO: make it collapsable -->
-                            <!-- https://www.w3schools.com/howto/howto_js_collapsible.asp#gsc.tab=0 -->
                         </span>
                         <div id="advancedsearch">
                             <h2>Advanced Search</h2>
                             <div id="filter">
-                              <table id="advancedsearchtable">
-                                <tr>
-                                  <td align="left">
-                                    <input type="checkbox" name="fall" value="fall">
-                                    <label for="fall">Fall</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="noprereq" value="noprereq">
-                                    <label for="noprereq">No Prerequisites</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="examsbased" value="examsbased">
-                                    <label for="examsbased">Exam-Based</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="industryrel" value="industryrel">
-                                    <!-- If they select 3, 3.0-3.99999 will be counted -->
-                                    <label for="industryrel">Industry Relevance (out of 5)
-                                      <select id="selectindustryrel">
-                                        <option value="" selected disabled hidden>0</option>
-                                        <option value="one">1</option>
-                                        <option value="two">2</option>
-                                        <option value="three">3</option>
-                                        <option value="four">4</option>
-                                        <option value="five">5</option>
-                                      </select>
-                                    </label>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="left">
-                                    <input type="checkbox" name="spring" value="spring">
-                                    <label for="spring">Spring</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="prereq" value="prereq">
-                                    <!-- TODO: make this select multiple -->
-                                    <!-- TODO: add more options -->
-                                    <label for="prereq">Prerequisites
-                                      <select id="prerequisites">
-                                        <option value="" selected disabled hidden>Select Course</option>
-                                        <option value="coms1004">COMS1004: Introduction to Computer Science/Programming in Java
-                                        </option>
-                                        <option value="coms3134">COMS3134: Data Structures</option>
-                                        <option value="coms3203">COMS3203: Discrete Mathemetatics</option>
-                                        <option value="coms3157">COMS3157: Advanced Programming</option>
-                                        <option value="coms3261">COMS3261: Computer Science Theory</option>
-                                        <option value="cseee3827">CSEE3827: Fundamentals of Computer Systems</option>
-                                        <option value="coms4111">COMS4111: Introduction to Databases</option>
-                                        <option value="coms4115">COMS 4115: Programming Languages and Translators</option>
-                                      </select>
-                                    </label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="projectbased" value="projectbased">
-                                    <label for="projectbased">Project-Based</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="profrating" value="profrating">
-                                    <label for="profrating">Professor Rating (out of 10)
-                                      <select id="profrating">
-                                        <option value="" selected disabled hidden>0</option>
-                                        <option value="one">1</option>
-                                        <option value="two">2</option>
-                                        <option value="three">3</option>
-                                        <option value="four">4</option>
-                                        <option value="five">5</option>
-                                        <option value="six">6</option>
-                                        <option value="seven">7</option>
-                                        <option value="eight">8</option>
-                                        <option value="nine">9</option>
-                                        <option value="ten">10</option>
-                                      </select>
-                                    </label>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="left">
-                                    <input type="checkbox" name="core" value="core">
-                                    <label for="core">CS Core</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="undergrad" value="undergrad">
-                                    <label for="undergrad">Undergraduate</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="noattendance" value="noattendance">
-                                    <label for="noattendance">No Attendance</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="coursedif" value="coursedif">
-                                    <label for="coursedif">Course Difficulty (out of 10)
-                                      <select id="coursedif">
-                                        <option value="" selected disabled hidden>0</option>
-                                        <option value="one">1</option>
-                                        <option value="two">2</option>
-                                        <option value="three">3</option>
-                                        <option value="four">4</option>
-                                        <option value="five">5</option>
-                                        <option value="six">6</option>
-                                        <option value="seven">7</option>
-                                        <option value="eight">8</option>
-                                        <option value="nine">9</option>
-                                        <option value="ten">10</option>
-                                      </select>
-                                    </label>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="left">
-                                    <input type="checkbox" name="elective" value="elective">
-                                    <label for="elective">CS Elective</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="grad" value="grad">
-                                    <label for="grad">Graduate</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="rec" value="rec">
-                                    <label for="rec">Recordings Available for All</label>
-                                  </td>
-                                  <td align="left">
-                                    <input type="checkbox" name="curve" value="curve">
-                                    <label for="curve">Curve</label>
-                                  </td>
-                                </tr>
-                              </table>
+                                <table id="advancedsearchtable">
+                                    <tr>
+                                        <td align="left">
+                                            <input type="checkbox" name="fall" value="fall">
+                                            <label for="fall">Fall</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="noprereq" value="noprereq">
+                                            <label for="noprereq">No Prerequisites</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="examsbased" value="examsbased">
+                                            <label for="examsbased">Exam-Based</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="industryrel" value="industryrel">
+                                            <!-- If they select 3, 3.0-3.99999 will be counted -->
+                                            <label for="industryrel">Industry Relevance (out of 5)
+                                                <select id="selectindustryrel">
+                                                    <option value="" selected disabled hidden>0</option>
+                                                    <option value="one">1</option>
+                                                    <option value="two">2</option>
+                                                    <option value="three">3</option>
+                                                    <option value="four">4</option>
+                                                    <option value="five">5</option>
+                                                </select>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
+                                            <input type="checkbox" name="spring" value="spring">
+                                            <label for="spring">Spring</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="prereq" value="prereq">
+                                            <!-- TODO: make this select multiple -->
+                                            <!-- TODO: add more options -->
+                                            <label for="prereq">Prerequisites
+                                                <select id="prerequisites">
+                                                    <option value="" selected disabled hidden>Select Course</option>
+                                                    <option value="coms1004">COMS1004: Introduction to Computer
+                                                        Science/Programming in Java
+                                                    </option>
+                                                    <option value="coms3134">COMS3134: Data Structures</option>
+                                                    <option value="coms3203">COMS3203: Discrete Mathemetatics</option>
+                                                    <option value="coms3157">COMS3157: Advanced Programming</option>
+                                                    <option value="coms3261">COMS3261: Computer Science Theory</option>
+                                                    <option value="cseee3827">CSEE3827: Fundamentals of Computer Systems
+                                                    </option>
+                                                    <option value="coms4111">COMS4111: Introduction to Databases
+                                                    </option>
+                                                    <option value="coms4115">COMS 4115: Programming Languages and
+                                                        Translators</option>
+                                                </select>
+                                            </label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="projectbased" value="projectbased">
+                                            <label for="projectbased">Project-Based</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="profrating" value="profrating">
+                                            <label for="profrating">Professor Rating (out of 10)
+                                                <select id="profrating">
+                                                    <option value="" selected disabled hidden>0</option>
+                                                    <option value="one">1</option>
+                                                    <option value="two">2</option>
+                                                    <option value="three">3</option>
+                                                    <option value="four">4</option>
+                                                    <option value="five">5</option>
+                                                    <option value="six">6</option>
+                                                    <option value="seven">7</option>
+                                                    <option value="eight">8</option>
+                                                    <option value="nine">9</option>
+                                                    <option value="ten">10</option>
+                                                </select>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
+                                            <input type="checkbox" name="core" value="core">
+                                            <label for="core">CS Core</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="undergrad" value="undergrad">
+                                            <label for="undergrad">Undergraduate</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="noattendance" value="noattendance">
+                                            <label for="noattendance">No Attendance</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="coursedif" value="coursedif">
+                                            <label for="coursedif">Course Difficulty (out of 10)
+                                                <select id="coursedif">
+                                                    <option value="" selected disabled hidden>0</option>
+                                                    <option value="one">1</option>
+                                                    <option value="two">2</option>
+                                                    <option value="three">3</option>
+                                                    <option value="four">4</option>
+                                                    <option value="five">5</option>
+                                                    <option value="six">6</option>
+                                                    <option value="seven">7</option>
+                                                    <option value="eight">8</option>
+                                                    <option value="nine">9</option>
+                                                    <option value="ten">10</option>
+                                                </select>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
+                                            <input type="checkbox" name="elective" value="elective">
+                                            <label for="elective">CS Elective</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="grad" value="grad">
+                                            <label for="grad">Graduate</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="rec" value="rec">
+                                            <label for="rec">Recordings Available for All</label>
+                                        </td>
+                                        <td align="left">
+                                            <input type="checkbox" name="curve" value="curve">
+                                            <label for="curve">Curve</label>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </article>
             </div>
