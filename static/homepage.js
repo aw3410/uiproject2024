@@ -50,9 +50,9 @@ $(document).ready(function () {
 
     $('#coursebutton').click(function () {
         coursecollapsible();
-    })
+    });
 
     $('#professorbutton').click(function () {
         professorcollapsible();
-    })
+    });
 });
