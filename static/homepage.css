@@ -152,15 +152,6 @@ header.websitename{
 .hidden {
     display: none;
 }
-  
-#coursesandprofessorssidebar a.active {
-    /* original background */
-    /* background-color: #999999; */
-    /* blue background */
-    background-color: #9bcbeb;
-    color: black;
-   
-}
 
 .coursesandprofessorscollapsible{
     border-style: solid; 
