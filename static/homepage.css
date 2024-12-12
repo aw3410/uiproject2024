@@ -57,6 +57,29 @@ header.websitename{
     width: 80%;
 }
 
+#advancedsearch{
+    display: none;
+    background-color: #B3B3B3; 
+    width: 85%; 
+    align-items: center; 
+    margin-left: 7.5%; 
+    color: black; 
+    font-size: 0.8em; 
+}
+
+#prerequisites{
+   font-size: 0.5em; 
+   width: 100%;
+}
+
+#advancedsearchtable {
+    /* make all the cells the same width */
+    table-layout: fixed;
+    width: 100%;
+    font-size: 0.8em; 
+}
+
+
 #homepagetext{
     text-align: center; 
     margin: auto auto; 
