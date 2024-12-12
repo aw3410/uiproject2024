@@ -7,6 +7,8 @@
 
   <link rel="stylesheet" href="{{ url_for('static', filename = 'coursepage_two.css')}}" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename = 'coursepage_two.js')}}"></script>
 
   <title>What CULPA Doesn't Tell You - CS Edition</title>
 </head>
@@ -63,6 +65,8 @@
             <span id="searchboxlinetwo">
               <input type="text" id="searchbox" placeholder="search">
               <button type="button" id="filterbutton">Filter</button>
+              <button type="button" id="search">Search</button>
+
               <!-- TODO: make it collapsable -->
               <!-- https://www.w3schools.com/howto/howto_js_collapsible.asp#gsc.tab=0 -->
             </span>
