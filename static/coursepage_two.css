@@ -58,6 +58,7 @@ header.websitename{
 }
 
 #advancedsearch{
+    display: none;
     background-color: #B3B3B3; 
     width: 85%; 
     align-items: center; 
