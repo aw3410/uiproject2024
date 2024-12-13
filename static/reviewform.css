@@ -132,12 +132,22 @@ label{
 }
 
 #gotohomepage{
+    display: inline-block;
+    background-color: #9bcbeb;
+    color: white; 
     padding: 1%; 
+    text-align: center;
+    text-decoration: none;
+}
+#gotohomepage:hover {
+    color: white; 
+    background-color: #757171;
 }
 
 #submitbutton{
     padding: 1%; 
     background-color: #9bcbeb;
+    color:white;
 }
 
 .submitline{

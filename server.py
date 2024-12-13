@@ -37,7 +37,7 @@ def inputreview():
 def professorpage(): 
     return render_template('professorpage_one.html')
 
-@app.route('/course')
+@app.route('/courses')
 def coursepage(): 
     return render_template('coursepage_two.html')
 

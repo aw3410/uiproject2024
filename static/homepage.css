@@ -94,12 +94,17 @@ header.websitename{
 }
 
 #reviewbutton{
+    display: inline-block;
     background-color: #B3B3B3;
     color: white; 
     padding: 1%; 
     border-style: none; 
     border-radius: 25px; 
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
+
 
 #reviewbutton:hover {
     color: white; 
