@@ -42,7 +42,7 @@
 		"difficultyTotalScore": 6,
 		"difficultyTotalVotes": 2,
 		"semester": ["Fall"],
-		"examsProjectsBases": ["Exams"],
+		"examsProjectsBased": ["Exams"],
 		"attendance": "Graded",
 		"recordings": null,
 		"latestLogisticsSemester": "Fall",
@@ -126,7 +126,7 @@
 		"difficultyTotalScore": 8,
 		"difficultyTotalVotes": 2,
 		"semester": ["Spring"],
-		"examsProjectsBases": ["Exams"],
+		"examsProjectsBased": ["Exams"],
 		"attendance": "In-class quizzes every other week",
 		"recordings": null,
 		"latestLogisticsSemester": "Spring",
@@ -168,4 +168,5 @@
 		"additionalComments": []
 
 	}]
-}]
+}
+]

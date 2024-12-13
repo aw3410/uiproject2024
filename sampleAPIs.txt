@@ -1,0 +1,118 @@
+GET: http://127.0.0.1:5000/filter?courseCode=COMS1004&curve=true
+Response
+[
+    {
+        "courseCode": "COMS1004",
+        "courseName": "Introduction to Computer Science / Programming in Java",
+        "courseURL": "/courses/COMS1004"
+    }
+]
+
+GET: http://127.0.0.1:5000/filter?courseCode=COMS1004&curve=true&industryRelevance=3&courseDifficulty=4
+[
+    {
+        "courseCode": "COMS1004",
+        "courseName": "Introduction to Computer Science / Programming in Java",
+        "courseURL": "/courses/COMS1004"
+    }
+]
+
+GET: http://127.0.0.1:5000/filter?professorRating=3
+[
+    {
+        "professorName": "Paul Blaer"
+    },
+    {
+        "professorName": "Addam Cannon"
+    }
+]
+GET: http://127.0.0.1:5000/courses
+[
+    {
+        "courseCode": "COMS1004",
+        "courseName": "Introduction to Computer Science/ Programming in Java",
+        "courseURL": "/courses/COMS1004"
+    },
+    {
+        "courseCode": "COMS3203",
+        "courseName": "Discrete Mathematics",
+        "courseURL": "/courses/COMS3203"
+    },
+    {
+        "courseCode": "COMS4701",
+        "courseName": "Artificial Intelligence",
+        "courseURL": "/courses/COMS14701"
+    }
+]
+
+GET: http://127.0.0.1:5000/professors
+[
+    {
+        "professorName": "Paul Blaer"
+    },
+    {
+        "professorName": "Adam Cannon"
+    },
+    {
+        "professorName": "Tony Dear"
+    }
+]
+
+GET: http://127.0.0.1:5000/search?query=Paul
+{
+    "courses": [
+    ],
+    "professors": [
+        {
+            "professorName": "Paul Blaer"
+        }
+    ]
+}
+
+GET: http://127.0.0.1:5000/search?query=COMS
+{
+    "courses": [
+        {
+            "courseCode": "COMS1004",
+            "courseName": "Introduction to Computer Science/ Programming in Java",
+            "courseURL": "/courses/COMS1004"
+        },
+        {
+            "courseCode": "COMS3203",
+            "courseName": "Discrete Mathematics",
+            "courseURL": "/courses/COMS3203"
+        },
+        {
+            "courseCode": "COMS4701",
+            "courseName": "Artificial Intelligence",
+            "courseURL": "/courses/COMS14701"
+        }
+    ],
+    "professors": [
+    ]
+}
+GET: http://127.0.0.1:5000/search?query=java
+{
+    "courses": [
+        {
+            "courseCode": "COMS1004",
+            "courseName": "Introduction to Computer Science/ Programming in Java",
+            "courseURL": "/courses/COMS1004"
+        }
+    ],
+    "professors": [
+    ]
+}
+
+GET: http://127.0.0.1:5000/search?query=COMS3
+{
+    "courses": [
+        {
+            "courseCode": "COMS3203",
+            "courseName": "Discrete Mathematics",
+            "courseURL": "/courses/COMS3203"
+        }
+    ],
+    "professors": [
+    ]
+}

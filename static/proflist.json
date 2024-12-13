@@ -1,1 +1,7 @@
-["Paul Blaer", "Adam Cannon", "Tony Dear"]
+[{
+	"professorName": "Paul Blaer"
+}, {
+	"professorName": "Adam Cannon"
+}, {
+	"professorName": "Tony Dear"
+}]

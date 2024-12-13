@@ -1,13 +1,16 @@
 [{
         "courseCode": "COMS1004",
-        "courseName": "Introduction to Computer Science/ Programming in Java"
+        "courseName": "Introduction to Computer Science/ Programming in Java",
+        "courseURL": "/courses/COMS1004"
 },
 {
         "courseCode": "COMS3203",
-        "courseName": "Discrete Mathematics"
+        "courseName": "Discrete Mathematics",
+        "courseURL": "/courses/COMS3203"
 },
 {
         "courseCode": "COMS4701",
-        "courseName": "Artificial Intelligence"
+        "courseName": "Artificial Intelligence",
+        "courseURL": "/courses/COMS14701"
 }
 ]

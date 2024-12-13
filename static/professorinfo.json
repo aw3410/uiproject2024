@@ -1,6 +1,6 @@
 [{
         "professorName": "Paul Blaer",
-        "overalRating": 4.5,
+        "overallRating": 4.5,
         "totalRating": 5,
         "ratingVotes": 2,
         "ratingDistribution": [{
@@ -37,7 +37,7 @@
                 "difficultyTotalScore": 6,
                 "difficultyTotalVotes": 2,
                 "semester": ["Fall"],
-                "examsProjectsBases": ["Exams"],
+                "examsProjectsBased": ["Exams"],
                 "attendance": "Graded",
                 "recordings": null,
                 "latestLogisticsSemester": "Fall",
@@ -91,7 +91,7 @@
 },
 {
         "professorName": "Addam Cannon",
-        "overalRating": 4.5,
+        "overallRating": 4.5,
         "totalRating": 5,
         "ratingVotes": 2,
         "ratingDistribution": [{
@@ -128,7 +128,7 @@
                 "difficultyTotalScore": 8,
                 "difficultyTotalVotes": 2,
                 "semester": ["Spring"],
-                "examsProjectsBases": ["Exams"],
+                "examsProjectsBased": ["Exams"],
                 "attendance": "Graded",
                 "recordings": null,
                 "latestLogisticsSemester": "Spring",
