@@ -48,23 +48,28 @@
 		"latestLogisticsSemester": "Fall",
 		"latestLogisticsSemesterYear": 2023,
 		"gradesBreakdown": [{
+				"color": "homework",
 				"component": "Homework",
 				"percentage": 45
 			},
 			{
+				"color": "exam1", 
 				"component": "Midterm1",
 				"percentage": 12
 			},
 			{
+				"color": "exam2", 
 				"component": "Midterm2",
 				"percentage": 12
 			},
 			{
-				"component": "final",
+				"color": "exam3", 
+				"component": "Final",
 				"percentage": 26
 			},
 			{
-				"component": "attendance",
+				"color": "attendance", 
+				"component": "Attendance",
 				"percentage": 5
 			}
 		],

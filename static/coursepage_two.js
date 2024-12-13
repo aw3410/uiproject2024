@@ -48,7 +48,6 @@ $(document).ready(function () {
         const course = data;
         $('#courseTitle').text(`${course.courseCode}: ${course.courseName}`);
 
-    
         let courseDetailsHtml = `
             <span id="generalcourseinformationcontainer" class="container">
                 <div class="boxeswithmediumrating">
@@ -110,15 +109,40 @@ $(document).ready(function () {
                                 <caption>Grading Breakdown</caption>
                                 ${professor.gradesBreakdown?.map(grade => `
                                     <tr>
-                                        <td class="color-legend"></td>
+                                        <td class="color-legend ${grade.color}"></td>
                                         <td>${grade.component}:</td>
                                         <td>${grade.percentage}%</td>
                                     </tr>
                                 `).join('') || '<tr><td>No grading data available.</td></tr>'}
                             </table>
                         </div>
-                        <div class="piechart">
+                        <div class="apiechart">
                             <!-- https://dev.to/cscarpitta/build-a-simple-pie-chart-with-html-and-css-32dn -->
+                            <canvas id="blaerpiechart"></canvas>
+
+                            <script>
+                                var xValues = ["Homework", "Midterm 1", "Midterm 2", "Final", "Attendance"];
+                                var yValues = [45, 12, 12, 26, 5];
+                                var pieColors = ["yellow", "#EA9999", "#E06666", "#CF2A27", "#93C47D"];
+
+                                new Chart("blaerpiechart", {
+                                    type: 'pie',
+                                    data: {
+                                        labels: xValues,
+                                        datasets: [
+                                            {
+                                                backgroundColor: pieColors,
+                                                data: yValues
+                                            }
+                                        ]
+                                    },
+                                    options: {
+                                        legend: {
+                                            display: false,
+                                        }
+                                    }
+                                });
+                            </script>
                         </div>    
                     </span>
                     <span class="courseinformationline">
