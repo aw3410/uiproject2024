@@ -1,5 +1,6 @@
-{
-	"courseCodeAndName": "COMS 1004: Introduction to Computer Science / Programming in Java",
+[{
+	"courseCode": "COMS1004",
+	"courseName": "Introduction to Computer Science / Programming in Java",
 	"industryRelevanceAverage": 3.5,
 	"industryRelevanceMaxRating": 5,
 	"industryRelevanceTotalScore": 7,
@@ -15,32 +16,12 @@
 		"ratingTotalScore": 18,
 		"ratingTotalVotes": 2,
 		"ratingDistribution": [{
-				"rating": 10,
-				"vote": 0
-			},
-			{
-				"rating": 9,
-				"vote": 2
-			},
-			{
-				"rating": 8,
-				"vote": 0
-			},
-			{
-				"rating": 7,
-				"vote": 0
-			},
-			{
-				"rating": 6,
-				"vote": 0
-			},
-			{
 				"rating": 5,
-				"vote": 0
+				"vote": 1
 			},
 			{
 				"rating": 4,
-				"vote": 0
+				"vote": 1
 			},
 			{
 				"rating": 3,
@@ -119,32 +100,12 @@
 		"ratingTotalScore": 18,
 		"ratingTotalVotes": 2,
 		"ratingDistribution": [{
-				"rating": 10,
-				"vote": 0
-			},
-			{
-				"rating": 9,
-				"vote": 2
-			},
-			{
-				"rating": 8,
-				"vote": 0
-			},
-			{
-				"rating": 7,
-				"vote": 0
-			},
-			{
-				"rating": 6,
-				"vote": 0
-			},
-			{
 				"rating": 5,
-				"vote": 0
+				"vote": 1
 			},
 			{
 				"rating": 4,
-				"vote": 0
+				"vote": 1
 			},
 			{
 				"rating": 3,
@@ -207,4 +168,4 @@
 		"additionalComments": []
 
 	}]
-}
+}]
