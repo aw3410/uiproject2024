@@ -191,5 +191,68 @@ def search():
 
     return jsonify(results)
 
+@app.route('/submitreview', methods=['POST'])
+def submitreview():
+    courseCode = request.args.get('courseCode')
+    courseName = request.args.get('courseName')
+    professor = request.args.get('professors')
+    semester = request.args.get('semesters')
+    examprojectsdropdown = request.args.get('examorprojectdropdown')
+    professor_rating = request.args.get('professor_rating')
+    industry_relevance_rating = request.args.get('industry_relevance_rating')
+    difficulty_rating = request.args.get('difficulty_rating')
+    weekly_workload = request.args.get('weeklyworkload')
+    curve = request.args.get('curve')
+    recordings = request.args.get('recordings')
+    attendance = request.args.get('attendance')
+    additionalcomments = request.args.get('additionalcomments')
+    level = request.args.get('level')
+    requirement = request.args.get('requirement')
+    prerequisites = request.args.get('prerequisites')
+
+
+    # Update course list to add the new course
+    if not any(course['courseCode'] == courseCode for course in course_list):
+        course_list.append({
+            "courseCode": courseCode,
+            "courseName": courseCode,
+            "courseURL": f"/courses/{courseCode}"
+        })
+        course = {
+            "courseCode" : courseCode,
+            "courseName": courseName,
+            "industryRelevanceAverage": industry_relevance_rating, #this is the first rating
+            "industryRelevanceMaxRating": 5,
+            "industryRelevanceTotalScore": industry_relevance_rating,
+            "industryRelevanceTotalVotes": 1,
+            "level": level,
+            "requirement": requirement,
+            "prerequisites": prerequisites
+        }
+
+        prof = {
+            "professorName": professor,
+            "ratingAverage": professor_rating,
+            "ratingMaxRating": 10,
+            "ratingTotalScore": professor_rating,
+            "ratingTotalVotes": 1,
+            "curve": curve,
+            "difficultyAverage": difficulty_rating,
+            "difficultyMaxRating": 10,
+            "difficultyTotalScore": difficulty_rating,
+            "difficultyTotalVotes": 1,
+            
+        }
+
+
+        course_data.append(course)
+
+    # Update prof list to add new professor
+    if not any(prof['professorName'] == professor for prof in prof_list):
+        prof_list.append({"professorName": professor})
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)

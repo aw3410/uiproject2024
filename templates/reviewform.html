@@ -24,12 +24,14 @@
     <span class="coursefeedbackformline">
         <!-- https://www.w3schools.com/tags/tag_datalist.asp -->
         <!-- <label for "Courses">Courses:</label> -->
+        <!-- TODO: to make it dynamic, we can fill the courses from GET /courses API-->
         <input list="dropdowncourses" name="courses" class="dropdowninput" placeholder="Course">
         <datalist id="dropdowncourses">
             <option value="COMS1004: Introduction to Computer Science/ Programming in Java">
             <option value="COMS3203: Discrete Mathematics">
         </datalist>
         <!-- <label for "professors">Professors:</label> -->
+         <!-- TODO: to make it dynamic, we can fill the professors from GET /professors API-->
         <input list="dropdownprofessors" name="professors" class="dropdowninput" placeholder="Professor">
         <datalist id="dropdownprofessors">
             <option value="Paul Blaer">
@@ -54,7 +56,8 @@
             </select>
         </div>
     </div>
-    <div class="ratescale">
+    <!-- Added a id here to be used for saving the response from this question -->
+    <div class="ratescale" id="professor_rating"> 
         <label for "rate10">How would you rate this professor?</label>
         <table class="rate10">
             <tr>
@@ -88,7 +91,7 @@
             </tr>
         </table>
     </div>
-    <div class="ratescale">
+    <div class="ratescale" id="industry_relevance_rating">
         <label for "rate5">In your opinion, was the class useful/relevant for industry work?</label>
         <table class="rate5">
             <tr>
@@ -111,7 +114,7 @@
             </tr>
         </table>
     </div>
-    <div class="ratescale">
+    <div class="ratescale" id="difficulty_rating">
         <label for "rate10">Rate the difficulty of the class</label>
         <table class="rate10">
             <tr>
@@ -166,12 +169,12 @@
     </div>
     <div id = "generalcourseinformation">
         <table id = "generalcourseinformationtable">
-            <tr>
+            <tr id="curve">
                 <td class = "columnone">Were the grades curved?</td>
                 <td class = "columntwo"><input type = "radio" value = "yes">Yes</td>
                 <td class = "columnthree"><input type = "radio" value = "no">No</td>
             </tr>
-            <tr>
+            <tr id="recordings">
                 <td class = "columnone">Are class recordings available to all students?</td>
                 <td class = "columntwo"><input type = "radio" value = "yes">Yes</td>
                 <td class = "columnthree"><input type = "radio" value = "no">No</td>
