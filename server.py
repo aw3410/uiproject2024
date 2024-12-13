@@ -42,14 +42,14 @@ def coursepage():
     return render_template('coursepage_two.html')
 
 #For a course page
-@app.route('/courses/<coursecode>')
+@app.route('/courses/<coursecode>', methods=['GET'])
 def courseinfo(coursecode):
-    course = next((course for course in course_data if course['courseCode'] == coursecode), None)
-    
+    course = next((course for course in course_data if course['courseCode'].lower() == coursecode.lower()), None)
     if course is None:
         abort(404, description="Course not found")
     
-    return jsonify(course)
+    return render_template('coursepage_two.html', data=course)
+
 
 #For a professor page
 @app.route('/professors/<profname>')
