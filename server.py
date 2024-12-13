@@ -11,8 +11,19 @@ def load_professor_course_data():
     with open('static/professorinfo.json') as f:
         return json.load(f)
 
+def load_courselist_data():
+    with open('static/courselist.json') as f:
+        return json.load(f)
+
+def load_proflist_data():
+    with open('static/proflist.json') as f:
+        return json.load(f)
+
 course_data = load_course_data()
 professor_course_data = load_professor_course_data()
+course_list = load_courselist_data()
+prof_list = load_proflist_data()
+
     
 @app.route('/')
 def home():
@@ -48,6 +59,13 @@ def profcourseinfo(profname):
     
     return jsonify(prof)
 
+@app.route('/professors')
+def proflist():
+    return jsonify(prof_list)
+
+@app.route('/courses')
+def courselist():
+    return jsonify(course_list)
 
 if __name__ == '__main__':
     app.run(debug=True)

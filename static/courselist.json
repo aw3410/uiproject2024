@@ -1,0 +1,13 @@
+[{
+        "courseCode": "COMS1004",
+        "courseName": "Introduction to Computer Science/ Programming in Java"
+},
+{
+        "courseCode": "COMS3203",
+        "courseName": "Discrete Mathematics"
+},
+{
+        "courseCode": "COMS4701",
+        "courseName": "Artificial Intelligence"
+}
+]
