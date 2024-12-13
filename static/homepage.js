@@ -42,6 +42,38 @@ function professorcollapsible() {
         toggletext.innerHTML = 'Professors +'
     }
 }
+function search(){
+    var professors = $('#listofprofessors a')
+    var courses = $('#listofcourses a')
+
+    let searchText = $('#searchbox').val().toLowerCase();
+    $('#result-box').remove();
+
+    courses.each(function(){
+        let courseName = $(this).text().split("Leave a Review")[0].trim();
+        let courseLink = $(this).attr('href')
+        if (courseName.toLowerCase().includes(searchText)){
+            $('#leaveareview').append(`
+                <div>
+                    <a id="result-box" href="${courseLink}"> ${courseName}</a>
+                <div>
+            `);
+        }
+    })
+    professors.each(function(){
+        let profName = $(this).text().split("Leave a Review")[0].trim();
+        let profLink = $(this).attr('href')
+        if (profName.toLowerCase().includes(searchText)){
+            $('#leaveareview').append(`
+                <div>
+                    <a id="result-box" href="${profLink}"> ${profName}</a>
+                <div>
+            `);
+        }
+    })
+
+
+}
 
 $(document).ready(function () {
     $('#filterbutton').click(function () {
@@ -55,4 +87,7 @@ $(document).ready(function () {
     $('#professorbutton').click(function () {
         professorcollapsible();
     });
+    $('#search').click(function(){
+        search();
+    })
 });

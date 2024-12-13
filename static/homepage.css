@@ -182,3 +182,26 @@ header.websitename{
     padding: 0; 
     font-weight: bold; 
 }
+#result-box {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: navy;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    text-decoration: none; 
+    width: auto;
+    max-width: 50%; 
+    margin: 20px auto;
+    position: relative; 
+    height: 40px; 
+    cursor: pointer; 
+}
+
+#result-box:hover {
+    color: white;
+    background-color: blue;
+    text-decoration:underline;
+}
