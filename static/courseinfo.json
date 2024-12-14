@@ -4,14 +4,13 @@
 		"courseName": "Introduction to Computer Science / Programming in Java",
 		"industryRelevanceAverage": 3.5,
 		"industryRelevanceMaxRating": 5,
-		"industryRelevanceTotalScore": 7,
-		"industryRelevanceTotalVotes": 2,
+		"industryRelevanceTotalScore": 14,
+		"industryRelevanceTotalVotes": 4,
 		"level": "Undergraduate",
 		"requirement": "Core",
 		"prerequisites": null,
 		"semestersOffered": [
 			"Fall",
-			"Summer",
 			"Spring"
 		],
 		"professors": [
@@ -228,12 +227,12 @@
 				"professorName": "Tony Dear",
 				"ratingAverage": 6,
 				"ratingMaxRating": 10,
-				"ratingTotalScore": 18,
-				"ratingTotalVotes": 3,
+				"ratingTotalScore": 12,
+				"ratingTotalVotes": 2,
 				"ratingDistribution": [
 					{
 						"rating": 5,
-						"vote": 1
+						"vote": 0
 					},
 					{
 						"rating": 4,
@@ -245,7 +244,7 @@
 					},
 					{
 						"rating": 2,
-						"vote": 0
+						"vote": 1
 					},
 					{
 						"rating": 1,
@@ -255,8 +254,8 @@
 				"curve": true,
 				"difficultyAverage": 7,
 				"difficultyMaxRating": 10,
-				"difficultyTotalScore": 21,
-				"difficultyTotalVotes": 3,
+				"difficultyTotalScore": 14,
+				"difficultyTotalVotes": 2,
 				"semester": [
 					"Fall"
 				],
@@ -331,8 +330,8 @@
 				"professorName": "Ansaf Salleb-Aouissi",
 				"ratingAverage": 8,
 				"ratingMaxRating": 10,
-				"ratingTotalScore": 16,
-				"ratingTotalVotes": 2,
+				"ratingTotalScore": 8,
+				"ratingTotalVotes": 1,
 				"ratingDistribution": [
 					{
 						"rating": 5,
@@ -358,8 +357,8 @@
 				"curve": true,
 				"difficultyAverage": 5,
 				"difficultyMaxRating": 10,
-				"difficultyTotalScore": 10,
-				"difficultyTotalVotes": 2,
+				"difficultyTotalScore": 5,
+				"difficultyTotalVotes": 1,
 				"semester": [
 					"Spring"
 				],
@@ -397,7 +396,7 @@
 					},
 					{
 						"workloadHours": "3-6",
-						"votes": 2
+						"votes": 1
 					},
 					{
 						"workloadHours": "6-9",
@@ -413,6 +412,115 @@
 					}
 				],
 				"additionalComments": [
+				]
+			}
+		]
+	},
+	{
+		"courseCode": "COMS4701",
+		"courseName": "Artificial Intelligence",
+		"industryRelevanceAverage": 2.67,
+		"industryRelevanceMaxRating": 5,
+		"industryRelevanceTotalScore": 8,
+		"industryRelevanceTotalVotes": 3,
+		"level": "Undergraduate",
+		"requirement": "Core",
+		"prerequisites": null,
+		"semestersOffered": [
+			"Spring"
+		],
+		"professors": [
+			{
+				"professorName": "Tony Dear",
+				"ratingAverage": 6.67,
+				"ratingMaxRating": 10,
+				"ratingTotalScore": 20,
+				"ratingTotalVotes": 3,
+				"ratingDistribution": [
+					{
+						"rating": 5,
+						"vote": 0
+					},
+					{
+						"rating": 4,
+						"vote": 1
+					},
+					{
+						"rating": 3,
+						"vote": 2
+					},
+					{
+						"rating": 2,
+						"vote": 0
+					},
+					{
+						"rating": 1,
+						"vote": 0
+					}
+				],
+				"curve": true,
+				"difficultyAverage": 7.67,
+				"difficultyMaxRating": 10,
+				"difficultyTotalScore": 23,
+				"difficultyTotalVotes": 3,
+				"semester": [
+					"Spring"
+				],
+				"examsProjectsBased": [
+					"Exams"
+				],
+				"attendance": "Not taken",
+				"recordings": "Yes",
+				"latestLogisticsSemester": "Spring",
+				"latestLogisticsSemesterYear": 2024,
+				"gradesBreakdown": [
+					{
+						"color": "yellow",
+						"classcolor": "homework",
+						"component": "Homework",
+						"percentage": 40
+					},
+					{
+						"color": "#EA9999",
+						"classcolor": "exam1",
+						"component": "Midterm",
+						"percentage": 20
+					},
+					
+					{
+						"color": "#CF2A27",
+						"classcolor": "exam2",
+						"component": "Final",
+						"percentage": 40
+					}
+					
+				],
+				"workload": [
+					{
+						"workloadHours": "0-3",
+						"votes": 0
+					},
+					{
+						"workloadHours": "3-6",
+						"votes": 0
+					},
+					{
+						"workloadHours": "6-9",
+						"votes": 1
+					},
+					{
+						"workloadHours": "9-12",
+						"votes": 2
+					},
+					{
+						"workloadHours": "12+",
+						"votes": 0
+					}
+				],
+				"additionalComments": [
+					{
+						"comment": "It is a good course but requires a lot of work"
+					}
 				]
 			}
 		]

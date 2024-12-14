@@ -2,7 +2,7 @@
         "lastname":"blaer",
         "professorName": "Paul Blaer",
         "overallRating": 4.5,
-        "totalRating": 5,
+        "totalRating": 9,
         "ratingVotes": 2,
         "ratingDistribution": [{
                         "rating": 5,
@@ -107,7 +107,7 @@
         "lastname":"cannon",
         "professorName": "Adam Cannon",
         "overallRating": 4.5,
-        "totalRating": 5,
+        "totalRating": 9,
         "ratingVotes": 2,
         "ratingDistribution": [{
                         "rating": 5,
@@ -191,6 +191,266 @@
                 ],
                 "additionalComments": []
 
+        }]
+},
+{
+        "lastname":"dear",
+        "professorName": "Tony Dear",
+        "overallRating": 3.2,
+        "totalRating": 16,
+        "ratingVotes": 5,
+        "ratingDistribution": [{
+                        "rating": 5,
+                        "vote": 0
+                },
+                {
+                        "rating": 4,
+                        "vote": 1
+                },
+                {
+                        "rating": 3,
+                        "vote": 4
+                },
+                {
+                        "rating": 2,
+                        "vote": 0
+                },
+                {
+                        "rating": 1,
+                        "vote": 0
+                }
+        ],
+        "courses": [{
+                "courseCode": "COMS3203",
+                "courseName": "Discrete Mathematics",
+                "ratingAverage": 6,
+                "ratingMaxRating": 10,
+                "ratingTotalScore": 12,
+                "ratingTotalVotes": 2,
+                "curve": true,
+                "difficultyAverage": 7,
+                "difficultyMaxRating": 10,
+                "difficultyTotalScore": 14,
+                "difficultyTotalVotes": 2,
+                "semester": ["Fall"],
+                "examsProjectsBased": ["Exams"],
+                "attendance": "Graded",
+                "recordings": "Yes",
+                "latestLogisticsSemester": "Fall",
+                "latestLogisticsSemesterYear": 2024,
+                "gradesBreakdown": [
+		        {
+			        "color": "yellow",
+				"classcolor": "homework",
+				"component": "Homework",
+				"percentage": 45
+			},
+			{
+				"color": "#EA9999",
+				"classcolor": "exam1",
+				"component": "Midterm1",
+				"percentage": 12
+			},
+			{
+				"color": "#E06666",
+				"classcolor": "exam2",
+				"component": "Midterm2",
+				"percentage": 12
+			},
+			{
+				"color": "#CF2A27",
+				"classcolor": "exam3",
+				"component": "Final",
+				"percentage": 26
+			},
+			{
+				"color": "#93C47D",
+				"classcolor": "attendance",
+				"component": "Attendance",
+				"percentage": 5
+			}
+		],
+                "workload": [{
+                                "workloadHours": "0-3",
+                                "votes": 0
+                        },
+                        {
+                                "workloadHours": "3-6",
+                                "votes": 0
+                        },
+                        {
+                                "workloadHours": "6-9",
+                                "votes": 2
+                        },
+                        {
+                                "workloadHours": "9-12",
+                                "votes": 0
+                        },
+                        {
+                                "workloadHours": "12+",
+                                "votes": 0
+                        }
+                ],
+                "additionalComments": [
+                ]
+        },
+        {
+                "courseCode": "COMS4701",
+                "courseName": "Artificial Intelligence",
+                "ratingAverage": 6.67,
+                "ratingMaxRating": 10,
+                "ratingTotalScore": 20,
+                "ratingTotalVotes": 3,
+                "curve": true,
+                "difficultyAverage": 7,
+                "difficultyMaxRating": 10,
+                "difficultyTotalScore": 14,
+                "difficultyTotalVotes": 2,
+                "semester": ["Spring"],
+                "examsProjectsBased": ["Exams"],
+                "attendance": "Not taken",
+                "recordings": "Yes",
+                "latestLogisticsSemester": "Spring",
+                "latestLogisticsSemesterYear": 2024,
+                "gradesBreakdown": [
+					{
+						"color": "yellow",
+						"classcolor": "homework",
+						"component": "Homework",
+						"percentage": 40
+					},
+					{
+						"color": "#EA9999",
+						"classcolor": "exam1",
+						"component": "Midterm",
+						"percentage": 20
+					},
+					
+					{
+						"color": "#CF2A27",
+						"classcolor": "exam2",
+						"component": "Final",
+						"percentage": 40
+					}
+					
+				],
+                "workload": [{
+                                "workloadHours": "0-3",
+                                "votes": 0
+                        },
+                        {
+                                "workloadHours": "3-6",
+                                "votes": 0
+                        },
+                        {
+                                "workloadHours": "6-9",
+                                "votes": 1
+                        },
+                        {
+                                "workloadHours": "9-12",
+                                "votes": 2
+                        },
+                        {
+                                "workloadHours": "12+",
+                                "votes": 0
+                        }
+                ],
+                "additionalComments": [
+					{
+						"comment": "It is a good course but requires a lot of work"
+					}
+		]
+        }
+        ]
+},
+{
+        "lastname":"aouissi",
+        "professorName": "Ansaf Salleb-Aouissi",
+        "overallRating": 4,
+        "totalRating": 8,
+        "ratingVotes": 1,
+        "ratingDistribution": [{
+                        "rating": 5,
+                        "vote": 0
+                },
+                {
+                        "rating": 4,
+                        "vote": 1
+                },
+                {
+                        "rating": 3,
+                        "vote": 0
+                },
+                {
+                        "rating": 2,
+                        "vote": 0
+                },
+                {
+                        "rating": 1,
+                        "vote": 0
+                }
+        ],
+        "courses": [{
+                "courseCode": "COMS3203",
+                "courseName": "Discrete Mathematics",
+                "ratingAverage": 8,
+                "ratingMaxRating": 10,
+                "ratingTotalScore": 8,
+                "ratingTotalVotes": 1,
+                "curve": true,
+                "difficultyAverage": 5,
+                "difficultyMaxRating": 10,
+                "difficultyTotalScore": 5,
+                "difficultyTotalVotes": 1,
+                "semester": ["Spring"],
+                "examsProjectsBased": ["Exams"],
+                "attendance": "Not taken",
+                "recordings": null,
+                "latestLogisticsSemester": "Spring",
+                "latestLogisticsSemesterYear": 2024,
+                "gradesBreakdown": [
+                        {
+                                "color": "yellow",
+                                "classcolor": "homework",
+                                "component": "Written and coding assignments",
+                                "percentage": 50
+                        },
+                        {
+                                "color": "#93C47D",
+                                "classcolor": "attendance",
+                                "component": "Midterm",
+                                "percentage": 25
+                        },
+                        {
+                                "color": "#EA9999",
+                                "classcolor": "exam1",
+                                "component": "Final",
+                                "percentage": 30
+                        }
+		],
+                "workload": [{
+                                "workloadHours": "0-3",
+                                "votes": 0
+                        },
+                        {
+                                "workloadHours": "3-6",
+                                "votes": 1
+                        },
+                        {
+                                "workloadHours": "6-9",
+                                "votes": 0
+                        },
+                        {
+                                "workloadHours": "9-12",
+                                "votes": 0
+                        },
+                        {
+                                "workloadHours": "12+",
+                                "votes": 0
+                        }
+                ],
+                "additionalComments": [
+                ]
         }]
 }
 ]
