@@ -26,7 +26,7 @@ GET: http://127.0.0.1:5000/filter?professorRating=3
         "professorName": "Addam Cannon"
     }
 ]
-GET: http://127.0.0.1:5000/courses
+GET: http://127.0.0.1:5000/courselist
 [
     {
         "courseCode": "COMS1004",
@@ -45,7 +45,7 @@ GET: http://127.0.0.1:5000/courses
     }
 ]
 
-GET: http://127.0.0.1:5000/professors
+GET: http://127.0.0.1:5000/professorlist
 [
     {
         "professorName": "Paul Blaer"
@@ -115,4 +115,26 @@ GET: http://127.0.0.1:5000/search?query=COMS3
     ],
     "professors": [
     ]
+}
+
+GET: http://127.0.0.1:5000/submitreview
+Request Body:
+{
+  "courseCode": "COMS4710",
+  "courseName": "Artificial Intelligence",
+  "professors": "Tony Dear",
+  "semesters": "Spring 2024",
+  "examorprojectdropdown": "Exams-Based",
+  "professor_rating": 8,
+  "industry_relevance_rating": 4,
+  "difficulty_rating": 6,
+  "weeklyworkload": "3-6 Hours",
+  "curve": true,
+  "recordings": "Yes",
+  "attendance": "Not graded",
+  "additionalcomments": "Great course!",
+  "level": "Undergraduate",
+  "requirement": "Core",
+  "prerequisites": "None",
+  "gradesBreakdown": "Homework: 40%, Midterm: 30%, Final: 30%"
 }
