@@ -1,4 +1,5 @@
 [{
+        "lastname":"blaer",
         "professorName": "Paul Blaer",
         "overallRating": 4.5,
         "totalRating": 5,
@@ -103,6 +104,7 @@
         }]
 },
 {
+        "lastname":"cannon",
         "professorName": "Adam Cannon",
         "overallRating": 4.5,
         "totalRating": 5,

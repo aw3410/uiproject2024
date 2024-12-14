@@ -152,19 +152,15 @@ tbody{
     position: relative; 
 }
 
-.bar5{
+.bar{
     align-items: left; 
     width: 50%; 
     background-color: #9bcbeb;
     height: 100%; 
 }
 
-.bar4{
-    align-items: left; 
-    width: 50%; 
-    background-color: #9bcbeb;
-    height: 100%;
-}
+
+
 
 
 #disclaimerandreview {

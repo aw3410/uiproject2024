@@ -55,12 +55,12 @@ def courseinfo(coursecode):
 #For a professor page
 @app.route('/professors/<profname>')
 def profcourseinfo(profname):
-    prof = next((prof for prof in professor_course_data if prof['professorName'] == profname), None)
+    prof = next((prof for prof in professor_course_data if prof['lastname'] == profname), None)
     
     if prof is None:
         abort(404, description="Professor not found")
     
-    return jsonify(prof)
+    return render_template('professorpage_one.html', data=prof)
 #For professors side menu
 @app.route('/professorlist')
 def proflist():
