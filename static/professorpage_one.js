@@ -109,9 +109,10 @@ $(document).ready(function () {
         console.log(starsHtml)
         $('#stars').append(starsHtml);
 
-        const totalVotes = Math.max(...prof.ratingDistribution.map(d => d.vote)) || 1; // Avoid division by zero
+        const totalVotes = Math.max(prof.ratingVotes) || 1; // Avoid division by zero
         $('#professorratingtablecontainer').html(`<table id=="professorratingtable" class="courseinformationline">`);
-
+        
+       
         const ratingTableHtml = prof.ratingDistribution.map(dist =>`
             <tr>
                 <td class="stars">${dist.rating} Stars</td>
@@ -122,6 +123,7 @@ $(document).ready(function () {
             </tr>`
             ).join('');
         $('#professorratingtablecontainer').html(ratingTableHtml);
+
         let profDetailsHtml = ''
         prof.courses.forEach((course, index) => {
             const piechartID = `piechart-${index}`;
