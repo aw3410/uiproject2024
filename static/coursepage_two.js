@@ -199,7 +199,7 @@ $(document).ready(function () {
                              <tr>
                                 <td>${comment.comment}</td>
                              </tr>
-                        `).join('') || '<tr><td>No additional comments available</td></tr>'}
+                        `).join('')}
                    
                     </table>
                 </div>
