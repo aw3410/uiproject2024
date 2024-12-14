@@ -1,12 +1,16 @@
 [{
-	"professorName": "Paul Blaer"
+	"professorName": "Paul Blaer",
+	"reviewcount": "2"
 }, {
-	"professorName": "Adam Cannon"
+	"professorName": "Adam Cannon",
+	"reviewcount": "2"
 },
 {
-	"professorName": "Tony Dear"
+	"professorName": "Tony Dear",
+	"reviewcount": "2"
 },
 {
-	"professorName": "Ansaf Salleb-Aouissi"
+	"professorName": "Ansaf Salleb-Aouissi",
+	"reviewcount": "2"
 }
 ]

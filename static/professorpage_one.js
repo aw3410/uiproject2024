@@ -124,7 +124,10 @@ $(document).ready(function () {
             ).join('');
         $('#professorratingtablecontainer').html(ratingTableHtml);
 
-        let profDetailsHtml = ''
+        let profDetailsHtml = ` 
+            <div id="courseinformationcontainer">
+                <span id="courseinformationchart">`
+
         prof.courses.forEach((course, index) => {
             const piechartID = `piechart-${index}`;
             const barchartID = `barchart-${index}`;
@@ -213,8 +216,14 @@ $(document).ready(function () {
                     </table>
                 </div>
                 </div>
+                </div>
             `;
         });
+
+        // courseDetailsHtml+= `
+        // </div>
+        // `
+
         $('#profDetails').html(profDetailsHtml);
         addpiechart(prof.courses)
         addbarchart(prof.courses)

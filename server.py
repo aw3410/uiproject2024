@@ -36,7 +36,7 @@ def inputreview():
 
 @app.route('/professor')
 def professorpage(): 
-    return render_template('professorpage_one.html')
+    return render_template('professor_page.html')
 
 @app.route('/courses')
 def coursepage(): 
@@ -55,12 +55,18 @@ def courseinfo(coursecode):
 #For a professor page
 @app.route('/professors/<profname>')
 def profcourseinfo(profname):
+    
     prof = next((prof for prof in professor_course_data if prof['lastname'] == profname), None)
     
     if prof is None:
         abort(404, description="Professor not found")
+
+    review_count = int(prof.get('reviewcount', 0))
+
+    css_file = 'professorpage_one.css' if review_count == 1 else 'professorpage_two.css'
     
-    return render_template('professorpage_one.html', data=prof)
+    return render_template('professorpage_one.html', css_file=css_file, data=prof)
+
 #For professors side menu
 @app.route('/professorlist')
 def proflist():

@@ -1,16 +1,19 @@
 [{
         "courseCode": "COMS1004",
         "courseName": "Introduction to Computer Science/ Programming in Java",
-        "courseURL": "/courses/COMS1004"
+        "courseURL": "/courses/COMS1004",
+        "reviewcount": "2"
 },
 {
         "courseCode": "COMS3203",
         "courseName": "Discrete Mathematics",
-        "courseURL": "/courses/COMS3203"
+        "courseURL": "/courses/COMS3203",
+        "reviewcount": "2"
 },
 {
         "courseCode": "COMS4701",
         "courseName": "Artificial Intelligence",
-        "courseURL": "/courses/COMS4701"
+        "courseURL": "/courses/COMS4701",
+        "reviewcount": "2"
 }
 ]
