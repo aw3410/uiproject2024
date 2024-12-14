@@ -46,7 +46,8 @@ function coursecollapsible() {
 function addpiechart(professors) {
     professors.forEach((professor, index) => {
         const piechartID = `piechart-${index}`;
-       
+        console.log("Workload Data:", professor.workload);
+
         new Chart(piechartID, {
             type: 'pie',
             data: {
@@ -62,8 +63,29 @@ function addpiechart(professors) {
                 }
             }
         });
-    }
-    )
+    })
+}
+
+function addbarchart(professors){
+
+    professors.forEach((professor, index) => {
+        const barchartID = `barchart-${index}`;
+        new Chart("blaerchart", {
+            type: "bar",
+            data: {
+            labels: professors.workload.map(workload => workloadHours),
+            datasets: [{
+                label: "Votes",
+                backgroundColor: "orange",
+                data: professors.workload.map(workload => workload.votes)
+            }]
+            },
+        options: {
+        legend: { display: false },
+        }
+        });
+    })
+    
 }
 
 
@@ -93,6 +115,7 @@ $(document).ready(function () {
             const gradesChartId = `grades-chart-${index}`;
             const workloadChartId = `workload-chart-${index}`;
             const piechartID = `piechart-${index}`;
+            const barchartID = `barchart-${index}`;
 
             courseDetailsHtml += `
             <div id="courseinformationcontainer">
@@ -154,38 +177,16 @@ $(document).ready(function () {
                                     <th>Hours a Week</th>
                                     <th>Votes</th>
                                 </tr>
-                                ${professor.workload?.map((votes, i) => `
+                                ${professor.workload?.map(workload => `
                                     <tr>
-                                        <td>${["0-3", "3-6", "6-9", "9-12", "12+"][i]}</td>
-                                        <td>${votes}</td>
+                                        <td>${workload.workloadHours}</td>
+                                        <td>${workload.votes}</td>
                                     </tr>
                                 `).join('') || '<tr><td>No workload data available.</td></tr>'}
                             </table>
                         </div>
                         <div class="barchart">
-                        <canvas id="blaerchart"></canvas>
-                            <!-- https://www.w3schools.com/ai/ai_chartjs.asp -->
-                            <!-- https://www.geeksforgeeks.org/how-to-implement-bar-and-pie-charts-using-chart-js/ -->
-                        <script>
-                            var xValues = ["0-3 Hours", "3-6 Hours", "6-9 Hours", "9-12 Hours", "12+ Hours"];
-                            var yValues = [0, 2, 0, 0, 0];
-                            var barColors = "orange";
-
-                            new Chart("blaerchart", {
-                                type: "bar",
-                                data: {
-                                labels: xValues,
-                                datasets: [{
-                                    label: "Votes",
-                                    backgroundColor: barColors,
-                                    data: yValues
-                                }]
-                                },
-                            options: {
-                            legend: { display: false },
-                            }
-                            });
-                        </script>
+                        <canvas id="${barchartID}"></canvas>
                     </div>
                 </span>
                 <div class="additionalcomments courseinformationline">
@@ -204,6 +205,7 @@ $(document).ready(function () {
         });
         $('#courseDetails').html(courseDetailsHtml);
         addpiechart(course.professors)
+        addbarchart(course.professors)
     }
 
     else {
