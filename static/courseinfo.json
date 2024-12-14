@@ -522,6 +522,101 @@
 						"comment": "It is a good course but requires a lot of work"
 					}
 				]
+			},
+			{
+				"professorName": "Ansaf Salleb-Aouissi",
+				"ratingAverage": 9,
+				"ratingMaxRating": 10,
+				"ratingTotalScore": 9,
+				"ratingTotalVotes": 1,
+				"ratingDistribution": [
+					{
+						"rating": 5,
+						"vote": 0
+					},
+					{
+						"rating": 4,
+						"vote": 1
+					},
+					{
+						"rating": 3,
+						"vote": 0
+					},
+					{
+						"rating": 2,
+						"vote": 0
+					},
+					{
+						"rating": 1,
+						"vote": 0
+					}
+				],
+				"curve": true,
+				"difficultyAverage": 4,
+				"difficultyMaxRating": 10,
+				"difficultyTotalScore": 4,
+				"difficultyTotalVotes": 1,
+				"semester": [
+					"Fall"
+				],
+				"examsProjectsBased": [
+					"Both"
+				],
+				"attendance": "Not required",
+				"recordings": "Yes",
+				"latestLogisticsSemester": "Fall",
+				"latestLogisticsSemesterYear": 2023,
+				"gradesBreakdown": [
+					{
+						"color": "yellow",
+						"classcolor": "homework",
+						"component": "Assignments",
+						"percentage": 10
+					},
+					{
+						"color": "#EA9999",
+						"classcolor": "exam1",
+						"component": "Exam1",
+						"percentage": 30
+					},
+					{
+						"color": "#CF2A27",
+						"classcolor": "exam2",
+						"component": "Exam2",
+						"percentage": 30
+					},
+					{
+						"color": "#93C47D",
+						"classcolor": "attendance",
+						"component": "Project",
+						"percentage": 30
+					}
+					
+				],
+				"workload": [
+					{
+						"workloadHours": "0-3",
+						"votes": 0
+					},
+					{
+						"workloadHours": "3-6",
+						"votes": 1
+					},
+					{
+						"workloadHours": "6-9",
+						"votes": 0
+					},
+					{
+						"workloadHours": "9-12",
+						"votes": 0
+					},
+					{
+						"workloadHours": "12+",
+						"votes": 0
+					}
+				],
+				"additionalComments": [
+				]
 			}
 		]
 	}
