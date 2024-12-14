@@ -1,13 +1,13 @@
 function advancedsearch() {
     var advancedsearchdiv = $('#advancedsearch')
-    
+
     const isVisible = advancedsearchdiv.is(':visible');
 
     if (isVisible) {
-        advancedsearchdiv.hide(); 
+        advancedsearchdiv.hide();
     }
     else {
-        advancedsearchdiv.show(); 
+        advancedsearchdiv.show();
     }
 }
 
@@ -43,8 +43,33 @@ function coursecollapsible() {
     }
 }
 
+function addpiechart(professors) {
+    professors.forEach((professor, index) => {
+        const piechartID = `piechart-${index}`;
+       
+        new Chart(piechartID, {
+            type: 'pie',
+            data: {
+                labels: professor.gradesBreakdown.map(grade => grade.component),
+                datasets: [{
+                    backgroundColor: professor.gradesBreakdown.map(grade => grade.color),
+                    data: professor.gradesBreakdown.map(grade => grade.percentage)
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                }
+            }
+        });
+    }
+    )
+}
+
+
+
 $(document).ready(function () {
-    if (data){
+    if (data) {
         const course = data;
         $('#courseTitle').text(`${course.courseCode}: ${course.courseName}`);
 
@@ -67,6 +92,7 @@ $(document).ready(function () {
             const professorId = `professor-${index}`;
             const gradesChartId = `grades-chart-${index}`;
             const workloadChartId = `workload-chart-${index}`;
+            const piechartID = `piechart-${index}`;
 
             courseDetailsHtml += `
             <div id="courseinformationcontainer">
@@ -109,7 +135,7 @@ $(document).ready(function () {
                                 <caption>Grading Breakdown</caption>
                                 ${professor.gradesBreakdown?.map(grade => `
                                     <tr>
-                                        <td class="color-legend ${grade.color}"></td>
+                                        <td class="color-legend ${grade.classcolor}"></td>
                                         <td>${grade.component}:</td>
                                         <td>${grade.percentage}%</td>
                                     </tr>
@@ -117,32 +143,7 @@ $(document).ready(function () {
                             </table>
                         </div>
                         <div class="apiechart">
-                            <!-- https://dev.to/cscarpitta/build-a-simple-pie-chart-with-html-and-css-32dn -->
-                            <canvas id="blaerpiechart"></canvas>
-
-                            <script>
-                                var xValues = ["Homework", "Midterm 1", "Midterm 2", "Final", "Attendance"];
-                                var yValues = [45, 12, 12, 26, 5];
-                                var pieColors = ["yellow", "#EA9999", "#E06666", "#CF2A27", "#93C47D"];
-
-                                new Chart("blaerpiechart", {
-                                    type: 'pie',
-                                    data: {
-                                        labels: xValues,
-                                        datasets: [
-                                            {
-                                                backgroundColor: pieColors,
-                                                data: yValues
-                                            }
-                                        ]
-                                    },
-                                    options: {
-                                        legend: {
-                                            display: false,
-                                        }
-                                    }
-                                });
-                            </script>
+                            <canvas id="${piechartID}"></canvas>
                         </div>    
                     </span>
                     <span class="courseinformationline">
@@ -199,9 +200,10 @@ $(document).ready(function () {
                 </div>
                 </div>
             `;
-            
+
         });
         $('#courseDetails').html(courseDetailsHtml);
+        addpiechart(course.professors)
     }
 
     else {

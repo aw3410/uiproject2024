@@ -48,27 +48,32 @@
 		"latestLogisticsSemester": "Fall",
 		"latestLogisticsSemesterYear": 2023,
 		"gradesBreakdown": [{
-				"color": "homework",
+				"color": "yellow",
+				"classcolor": "homework",
 				"component": "Homework",
 				"percentage": 45
 			},
 			{
-				"color": "exam1", 
+				"color": "#EA9999",
+				"classcolor": "exam1", 
 				"component": "Midterm1",
 				"percentage": 12
 			},
 			{
-				"color": "exam2", 
+				"color": "#E06666",
+				"classcolor": "exam2", 
 				"component": "Midterm2",
 				"percentage": 12
 			},
 			{
-				"color": "exam3", 
+				"color": "#CF2A27",
+				"classcolor": "exam3", 
 				"component": "Final",
 				"percentage": 26
 			},
 			{
-				"color": "attendance", 
+				"color": "#93C47D",
+				"classcolor": "attendance", 
 				"component": "Attendance",
 				"percentage": 5
 			}
@@ -137,14 +142,20 @@
 		"latestLogisticsSemester": "Spring",
 		"latestLogisticsSemesterYear": 2022,
 		"gradesBreakdown": [{
+				"color": "yellow",
+				"classcolor": "homework",
 				"component": "Homework",
 				"percentage": 50
 			},
 			{
+				"color": "#93C47D",
+				"classcolor": "attendance",
 				"component": "In-class quizzes",
 				"percentage": 15
 			},
 			{
+				"color": "#EA9999",
+				"classcolor": "exam1",
 				"component": "Final",
 				"percentage": 35
 			}

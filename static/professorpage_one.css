@@ -308,6 +308,10 @@ tbody{
     background-color: #93C47D;
 }
 
+.project1 {
+    background-color: lightblue; 
+}
+
 .onecourse {
     border-style: solid;
     justify-content: center;
