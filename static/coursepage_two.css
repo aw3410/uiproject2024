@@ -203,8 +203,10 @@ header.websitename{
 }
 
 .third{
-    width: 25%; 
+    
     padding: 1%; 
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .piechart {
