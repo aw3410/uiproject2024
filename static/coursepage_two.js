@@ -1,13 +1,29 @@
+
+function coursecollapsible() {
+    var courses = $('#listofcourses')
+    var toggletext = document.getElementById('coursebutton')
+
+    const isVisible = courses.hasClass('hidden');
+
+    if (isVisible) {
+        courses.removeClass('hidden');
+        toggletext.innerHTML = 'Courses -'
+
+    } else {
+        courses.addClass('hidden');
+        toggletext.innerHTML = 'Courses +'
+    }
+}
 function advancedsearch() {
     var advancedsearchdiv = $('#advancedsearch')
-
+    
     const isVisible = advancedsearchdiv.is(':visible');
 
     if (isVisible) {
-        advancedsearchdiv.hide();
+        advancedsearchdiv.hide(); 
     }
     else {
-        advancedsearchdiv.show();
+        advancedsearchdiv.show(); 
     }
 }
 
@@ -26,23 +42,6 @@ function professorcollapsible() {
         toggletext.innerHTML = 'Professors +'
     }
 }
-
-function coursecollapsible() {
-    var courses = $('#listofcourses')
-    var toggletext = document.getElementById('coursebutton')
-
-    const isVisible = courses.hasClass('hidden');
-
-    if (isVisible) {
-        courses.removeClass('hidden');
-        toggletext.innerHTML = 'Courses -'
-
-    } else {
-        courses.addClass('hidden');
-        toggletext.innerHTML = 'Courses +'
-    }
-}
-
 function addpiechart(professors) {
     professors.forEach((professor, index) => {
         const piechartID = `piechart-${index}`;

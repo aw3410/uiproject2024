@@ -48,8 +48,7 @@ function search(){
 
     let searchText = $('#searchbox').val().toLowerCase();
     $('#result-box').remove();
-    $("#courseDetails").empty();
-    $("profDetails").empty();
+
 
     courses.each(function(){
         let courseName = $(this).text().split("Leave a Review")[0].trim();
@@ -81,6 +80,14 @@ function redirectToReview() {
 }
 
 $(document).ready(function () {
+    $('#search').click(function(){
+        search();
+    })
+    $('#searchbox').keypress(function (e) {
+        if (e.which === 13) {
+            search();
+        }
+    });
     $('#filterbutton').click(function () {
         advancedsearch();
     });
@@ -92,7 +99,5 @@ $(document).ready(function () {
     $('#professorbutton').click(function () {
         professorcollapsible();
     });
-    $('#search').click(function(){
-        search();
-    })
+    
 });
