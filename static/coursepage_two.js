@@ -46,7 +46,6 @@ function coursecollapsible() {
 function addpiechart(professors) {
     professors.forEach((professor, index) => {
         const piechartID = `piechart-${index}`;
-        console.log("Workload Data:", professor.workload);
 
         new Chart(piechartID, {
             type: 'pie',
@@ -66,26 +65,28 @@ function addpiechart(professors) {
     })
 }
 
-function addbarchart(professors){
+function addbarchart(professors) {
 
     professors.forEach((professor, index) => {
         const barchartID = `barchart-${index}`;
-        new Chart("blaerchart", {
+        new Chart(barchartID, {
             type: "bar",
             data: {
-            labels: professors.workload.map(workload => workloadHours),
-            datasets: [{
-                label: "Votes",
-                backgroundColor: "orange",
-                data: professors.workload.map(workload => workload.votes)
-            }]
+                labels: professor.workload.map(workload => workload.workloadHours),
+                datasets: [{
+                    label: "Votes",
+                    backgroundColor: "orange",
+                    data: professor.workload.map(workload => workload.votes)
+                }]
             },
-        options: {
-        legend: { display: false },
-        }
+            options: {
+                legend: {
+                    display: false
+                },
+            }
         });
     })
-    
+
 }
 
 
@@ -109,6 +110,8 @@ $(document).ready(function () {
                     <p class="boxtext">Semesters Offered: ${course.semestersOffered}</p>
                 </div>
             </span>
+             <div id="courseinformationcontainer">
+                <span id="courseinformationchart">
         `;
         course.professors.forEach((professor, index) => {
             const professorId = `professor-${index}`;
@@ -117,9 +120,7 @@ $(document).ready(function () {
             const piechartID = `piechart-${index}`;
             const barchartID = `barchart-${index}`;
 
-            courseDetailsHtml += `
-            <div id="courseinformationcontainer">
-                <span id="courseinformationchart">
+            courseDetailsHtml += `     
                 <div class="onecourse">
                     <div class="professorname">Professor: ${professor.professorName}</div>
                     <div class="courseinformation">
@@ -201,6 +202,10 @@ $(document).ready(function () {
                 </div>
                 </div>
             `;
+
+            courseDetailsHtml+= `
+            </div>
+            `
 
         });
         $('#courseDetails').html(courseDetailsHtml);

@@ -80,23 +80,23 @@
 		],
 		"workload": [{
 				"workloadHours": "0-3",
-				"votes": 1
-			},
-			{
-				"workloadHours": "3-6",
 				"votes": 0
 			},
 			{
+				"workloadHours": "3-6",
+				"votes": 2
+			},
+			{
 				"workloadHours": "6-9",
-				"votes": 1
+				"votes": 0
 			},
 			{
 				"workloadHours": "9-12",
-				"votes": 1
+				"votes": 0
 			},
 			{
 				"workloadHours": "12+",
-				"votes": 1
+				"votes": 0
 			}
 		],
 		"additionalComments": [
@@ -162,23 +162,23 @@
 		],
 		"workload": [{
 				"workloadHours": "0-3",
-				"votes": 1
-			},
-			{
-				"workloadHours": "3-6",
 				"votes": 0
 			},
 			{
+				"workloadHours": "3-6",
+				"votes": 2
+			},
+			{
 				"workloadHours": "6-9",
-				"votes": 1
+				"votes": 0
 			},
 			{
 				"workloadHours": "9-12",
-				"votes": 1
+				"votes": 0
 			},
 			{
 				"workloadHours": "12+",
-				"votes": 1
+				"votes": 0
 			}
 		],
 		"additionalComments": []
