@@ -26,17 +26,17 @@
                         +</button>
                 </div>
                 <div id="listofcourses" class="hidden">
-                    <a href="#coms1004">COMS1004: Introduction to Computer Science/ Programming in Java
+                    <a href="courses/coms1004">COMS1004: Introduction to Computer Science/ Programming in Java
                         <button type="button" class="reviewbutton">Leave a Review</button>
                     </a>
-                    <a href="#coms3203">COMS3203: Discrete Mathemetatics
+                    <a href="courses/coms3203">COMS3203: Discrete Mathemetatics
                         <button type="button" class="reviewbutton">Leave a Review</button>
                     </a>
-                    <a href="coms4701">COMS4701: Artificial Intelligence
+                    <a href="courses/coms4701">COMS4701: Artificial Intelligence
                         <button type="button" class="reviewbutton">Leave a Review</button>
                     </a>
                     <div class="missing">Course Missing?
-                        <a class="missinglink" href="#missingreview">Leave a Review</a>
+                        <a class="missinglink" href="reviewform">Leave a Review</a>
                     </div>
                 </div>
             </div>
@@ -45,15 +45,17 @@
                     +</button>
             </div>
             <div id="listofprofessors" class="hidden">
-                <a href="#blaer">Paul Blaer
+                <a href="/professors/blaer">Paul Blaer
                     <button type="button" class="reviewbutton">Leave a Review</button>
                 </a>
-                <a class="active" href="#cannon">Adam Cannon</a>
-                <a href="#dear">Tony Dear
+                <a href="/professors/cannon">Adam Cannon
+                    <button type="button" class="reviewbutton">Leave a Review</button>
+                </a>
+                <a href="/professors/dear">Tony Dear
                     <button type="button" class="reviewbutton">Leave a Review</button>
                 </a>
                 <div class="missing">Professor Missing?
-                    <a class="missinglink" href="#missingreview">Leave a Review</a>
+                    <a class="missinglink" href="/reviewform">Leave a Review</a>
                 </div>
             </div>
         </div>
@@ -63,7 +65,7 @@
         <div id="searchboxcontainer" class="container">
             <article role="article" data-focusible="true" tabindex="0">
                 <div>
-                    <header class="websitename">What Culpa Doesn't Tell You - CS Edition</header>
+                    <header class="websitename"><a href="/">What Culpa Doesn't Tell You - CS Edition</a></header>
                 </div>
                 <div>
                     <span id="searchboxlinetwo">
@@ -224,164 +226,14 @@
                         students
                         experiences.</p>
                     <p id="tookthisclass">Had this professor before?</p>
-                    <button type="button" id="contentreviewbutton" class="reviewbutton">Leave a Review!</button>
+                    <a href="/reviewform"><button type="button" id="contentreviewbutton" class="reviewbutton">Leave a Review!</button></a>
                 </div>
             </article>
         </div>
-
         <div id="courseinformationcontainer">
-            <div class="onecourse">
-                <div class="coursename">COMS1004: Introduction to Computer Science/ Programming in Java</div>
-                <div class="courseinformation">
-                    <span class="courseinformationline">
-                        <div class="boxeswithbestrating">
-                            <p class="boxtext">Rating</p>
-                            <p class="vote">9/10</p>
-                            <p class="boxtext">out of 2 votes</p>
-                        </div>
-                        <div class="boxeswithgoodrating">
-                            <p class="boxtext">Curve</p>
-                            <p class="vote">Yes</p>
-                        </div>
-                        <div class="boxeswithmediumrating">
-                            <p class="boxtext">Difficulty</p>
-                            <p class="vote">4/10</p>
-                            <p class="boxtext">out of 2 votes</p>
-                        </div>
-                    </span>
-                    <div class="courseinformationline">
-                        <div class="box">
-                            <p>Semester</p>
-                            <p>Spring</p>
-                        </div>
-                    </div>
-                    <div class="courseinformationline">
-                        <div class="box">
-                            <p>Exams/Projects-based: Exams</p>
-                            <p>Attendance: In-Class Quizzes every other week</p>
-                            <p>Recordings: None</p>
-                            <p>*Note: Spring 2022</p>
-                        </div>
-                    </div>
-                    <span class="courseinformationline">
-                        <div class="box">
-                            <table>
-                                <caption>Grading Breakdown</caption>
-                                <tr>
-                                    <td class="color-legend homework"></td>
-                                    <td>Homework:</td>
-                                    <td>50%</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-legend attendance"></td>
-                                    <td>In Class Quizzes</td>
-                                    <td>15%</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-legend exam1"></td>
-                                    <td>Final:</td>
-                                    <td>35%</td>
-                                </tr>
-                            </table>
-                            <p>*NOTE: Spring 2022</p>
-                        </div>
-                        <div class="apiechart">
-                            <!-- https://www.w3schools.com/ai/ai_chartjs.asp -->
-                            <canvas id="cannonpiechart"></canvas>
-
-                            <script>
-                                var xValues = ["Homework", "In Class Quizzes", "Final"];
-                                var yValues = [50, 15, 35];
-                                var pieColors = ["yellow", "#93C47D", "#EA9999"];
-
-                                new Chart("cannonpiechart", {
-                                    type: 'pie',
-                                    data: {
-                                        labels: xValues,
-                                        datasets: [
-                                            {
-                                                backgroundColor: pieColors,
-                                                data: yValues
-                                            }
-                                        ]
-                                    },
-                                    options: {
-                                        legend: {
-                                            display: false,
-                                        }
-                                    }
-                                });
-                            </script>
-                        </div>
-                    </span>
-                    <span class="courseinformationline">
-                        <div class="box">
-                            <table>
-                                <caption>Course Workload</caption>
-                                <tr>
-                                    <th>Hours a Week</th>
-                                    <th>Votes</th>
-                                </tr>
-                                <tr>
-                                    <td>0-3</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>3-6</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>6-9</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>9-12</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>12+</td>
-                                    <td>0</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="barchart">
-                            <canvas id="cannonbarchart"></canvas>
-                            <!-- https://www.w3schools.com/ai/ai_chartjs.asp -->
-                            <!-- https://www.geeksforgeeks.org/how-to-implement-bar-and-pie-charts-using-chart-js/ -->
-                            <script>
-                                var xValues = ["0-3 Hours", "3-6 Hours", "6-9 Hours", "9-12 Hours", "12+ Hours"];
-                                var yValues = [0, 2, 0, 0, 0];
-                                var barColors = "orange";
-
-                                new Chart("cannonbarchart", {
-                                    type: "bar",
-                                    data: {
-                                        labels: xValues,
-                                        datasets: [{
-                                            label: "Votes",
-                                            backgroundColor: barColors,
-                                            data: yValues
-                                        }]
-                                    },
-                                    options: {
-                                        legend: { display: false },
-                                    }
-                                });
-                            </script>
-                        </div>
-                    </span>
-                </div>
-                <div class="additionalcomments courseinformationline">
-                    <table>
-                        <tr>
-                            <th>Additional Comments</th>
-                        </tr>
-                    </table>
-                </div>
-                </span>
-            </div>
-        </div>
-    </div>
+            <div id="profDetails"></div>
+        </div>  
+    </div>                           
     <script>
         const data = {{ data|tojson }};
     </script>  

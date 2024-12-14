@@ -86,7 +86,7 @@ header.websitename{
 }
 
 #professorrating{
-    font-size: 0.7em; 
+    font-size: 0.8em; 
     align-items: center; 
     justify-content: center; 
     text-align: center; 
@@ -217,9 +217,14 @@ tbody{
     font-size: 1em;
     text-align: center;
 }
+.websitename a{
+    color:white;
+    text-decoration: none;
+    cursor:pointer;
+}
 
 .boxtext {
-    font-size: 0.5em;
+    font-size: 0.7em;
     text-align: center;
 }
 
@@ -253,7 +258,7 @@ tbody{
     display: flex;
     justify-content: space-evenly;
     gap: 8%;
-    padding-top: 1%;
+    padding-top: 3%;
     width: 100%; 
 }
 
@@ -266,7 +271,7 @@ tbody{
 .box {
     border-style: solid;
     text-align: center;
-    font-size: 0.5em;
+    font-size: 0.8em;
 }
 
 .additionalcomments {

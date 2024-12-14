@@ -207,5 +207,214 @@
 				]
 			}
 		]
+	}, 
+	{
+		"courseCode": "COMS3203",
+		"courseName": "Discrete Mathematics",
+		"industryRelevanceAverage": 1.5,
+		"industryRelevanceMaxRating": 5,
+		"industryRelevanceTotalScore": 7,
+		"industryRelevanceTotalVotes": 3,
+		"level": "Undergraduate",
+		"requirement": "Core",
+		"prerequisites": "An introductory course",
+		"semestersOffered": [
+			"Fall",
+			"Summer",
+			"Spring"
+		],
+		"professors": [
+			{
+				"professorName": "Tony Dear",
+				"ratingAverage": 6,
+				"ratingMaxRating": 10,
+				"ratingTotalScore": 18,
+				"ratingTotalVotes": 3,
+				"ratingDistribution": [
+					{
+						"rating": 5,
+						"vote": 1
+					},
+					{
+						"rating": 4,
+						"vote": 1
+					},
+					{
+						"rating": 3,
+						"vote": 0
+					},
+					{
+						"rating": 2,
+						"vote": 0
+					},
+					{
+						"rating": 1,
+						"vote": 0
+					}
+				],
+				"curve": true,
+				"difficultyAverage": 7,
+				"difficultyMaxRating": 10,
+				"difficultyTotalScore": 21,
+				"difficultyTotalVotes": 3,
+				"semester": [
+					"Fall"
+				],
+				"examsProjectsBased": [
+					"Exams"
+				],
+				"attendance": "Graded",
+				"recordings": "Yes",
+				"latestLogisticsSemester": "Fall",
+				"latestLogisticsSemesterYear": 2024,
+				"gradesBreakdown": [
+					{
+						"color": "yellow",
+						"classcolor": "homework",
+						"component": "Homework",
+						"percentage": 45
+					},
+					{
+						"color": "#EA9999",
+						"classcolor": "exam1",
+						"component": "Midterm1",
+						"percentage": 12
+					},
+					{
+						"color": "#E06666",
+						"classcolor": "exam2",
+						"component": "Midterm2",
+						"percentage": 12
+					},
+					{
+						"color": "#CF2A27",
+						"classcolor": "exam3",
+						"component": "Final",
+						"percentage": 26
+					},
+					{
+						"color": "#93C47D",
+						"classcolor": "attendance",
+						"component": "Attendance",
+						"percentage": 5
+					}
+				],
+				"workload": [
+					{
+						"workloadHours": "0-3",
+						"votes": 0
+					},
+					{
+						"workloadHours": "3-6",
+						"votes": 0
+					},
+					{
+						"workloadHours": "6-9",
+						"votes": 2
+					},
+					{
+						"workloadHours": "9-12",
+						"votes": 0
+					},
+					{
+						"workloadHours": "12+",
+						"votes": 0
+					}
+				],
+				"additionalComments": [
+					{
+						"comment": ""
+					}
+				]
+			},
+			{
+				"professorName": "Ansaf Salleb-Aouissi",
+				"ratingAverage": 8,
+				"ratingMaxRating": 10,
+				"ratingTotalScore": 16,
+				"ratingTotalVotes": 2,
+				"ratingDistribution": [
+					{
+						"rating": 5,
+						"vote": 1
+					},
+					{
+						"rating": 4,
+						"vote": 1
+					},
+					{
+						"rating": 3,
+						"vote": 0
+					},
+					{
+						"rating": 2,
+						"vote": 0
+					},
+					{
+						"rating": 1,
+						"vote": 0
+					}
+				],
+				"curve": true,
+				"difficultyAverage": 5,
+				"difficultyMaxRating": 10,
+				"difficultyTotalScore": 10,
+				"difficultyTotalVotes": 2,
+				"semester": [
+					"Spring"
+				],
+				"examsProjectsBased": [
+					"Exams"
+				],
+				"attendance": "Not taken",
+				"recordings": null,
+				"latestLogisticsSemester": "Spring",
+				"latestLogisticsSemesterYear": 2024,
+				"gradesBreakdown": [
+					{
+						"color": "yellow",
+						"classcolor": "homework",
+						"component": "Written and coding assignments",
+						"percentage": 50
+					},
+					{
+						"color": "#93C47D",
+						"classcolor": "attendance",
+						"component": "Midterm",
+						"percentage": 25
+					},
+					{
+						"color": "#EA9999",
+						"classcolor": "exam1",
+						"component": "Final",
+						"percentage": 30
+					}
+				],
+				"workload": [
+					{
+						"workloadHours": "0-3",
+						"votes": 0
+					},
+					{
+						"workloadHours": "3-6",
+						"votes": 2
+					},
+					{
+						"workloadHours": "6-9",
+						"votes": 0
+					},
+					{
+						"workloadHours": "9-12",
+						"votes": 0
+					},
+					{
+						"workloadHours": "12+",
+						"votes": 0
+					}
+				],
+				"additionalComments": [
+				]
+			}
+		]
 	}
 ]

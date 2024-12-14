@@ -21,6 +21,11 @@ body {
 header.websitename{
     font-size: 1.5em; 
 }
+.websitename a{
+    color:white;
+    text-decoration: none;
+    cursor:pointer;
+}
 
 #content {
     /* push everything else to the right */

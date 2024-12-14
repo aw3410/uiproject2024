@@ -155,6 +155,11 @@ header.websitename{
     border-style: solid;
     margin-top: 1%;
 }
+.websitename a{
+    color:white;
+    text-decoration: none;
+    cursor:pointer;
+}
 
 #courseinformationchart {
     display: flex;

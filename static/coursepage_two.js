@@ -89,8 +89,6 @@ function addbarchart(professors) {
 
 }
 
-
-
 $(document).ready(function () {
     if (data) {
         const course = data;
@@ -114,9 +112,6 @@ $(document).ready(function () {
                 <span id="courseinformationchart">
         `;
         course.professors.forEach((professor, index) => {
-            const professorId = `professor-${index}`;
-            const gradesChartId = `grades-chart-${index}`;
-            const workloadChartId = `workload-chart-${index}`;
             const piechartID = `piechart-${index}`;
             const barchartID = `barchart-${index}`;
 

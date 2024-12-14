@@ -48,6 +48,8 @@ function search(){
 
     let searchText = $('#searchbox').val().toLowerCase();
     $('#result-box').remove();
+    $("#courseDetails").empty();
+    $("profDetails").empty();
 
     courses.each(function(){
         let courseName = $(this).text().split("Leave a Review")[0].trim();
