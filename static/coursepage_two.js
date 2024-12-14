@@ -195,9 +195,12 @@ $(document).ready(function () {
                         <tr>
                             <th>Additional Comments</th>
                         </tr>
-                    <tr>
-                        <td>Loved this professor, he was the best!</td>
-                    </tr>
+                        ${professor.additionalComments?.map(comment => `
+                             <tr>
+                                <td>${comment.comment}</td>
+                             </tr>
+                        `).join('') || '<tr><td>No additional comments available</td></tr>'}
+                   
                     </table>
                 </div>
                 </div>

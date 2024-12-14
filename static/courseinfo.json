@@ -1,188 +1,211 @@
-[{
-	"courseCode": "COMS1004",
-	"courseName": "Introduction to Computer Science / Programming in Java",
-	"industryRelevanceAverage": 3.5,
-	"industryRelevanceMaxRating": 5,
-	"industryRelevanceTotalScore": 7,
-	"industryRelevanceTotalVotes": 2,
-	"level": "Undergraduate",
-	"requirement": "Core",
-	"prerequisites": null,
-	"semestersOffered": ["Fall", "Summer", "Spring"],
-	"professors": [{
-		"professorName": "Paul Blaer",
-		"ratingAverage": 9,
-		"ratingMaxRating": 10,
-		"ratingTotalScore": 18,
-		"ratingTotalVotes": 2,
-		"ratingDistribution": [{
-				"rating": 5,
-				"vote": 1
-			},
-			{
-				"rating": 4,
-				"vote": 1
-			},
-			{
-				"rating": 3,
-				"vote": 0
-			},
-			{
-				"rating": 2,
-				"vote": 0
-			},
-			{
-				"rating": 1,
-				"vote": 0
-			}
+[
+	{
+		"courseCode": "COMS1004",
+		"courseName": "Introduction to Computer Science / Programming in Java",
+		"industryRelevanceAverage": 3.5,
+		"industryRelevanceMaxRating": 5,
+		"industryRelevanceTotalScore": 7,
+		"industryRelevanceTotalVotes": 2,
+		"level": "Undergraduate",
+		"requirement": "Core",
+		"prerequisites": null,
+		"semestersOffered": [
+			"Fall",
+			"Summer",
+			"Spring"
 		],
-		"curve": true,
-		"difficultyAverage": 3,
-		"difficultyMaxRating": 10,
-		"difficultyTotalScore": 6,
-		"difficultyTotalVotes": 2,
-		"semester": ["Fall"],
-		"examsProjectsBased": ["Exams"],
-		"attendance": "Graded",
-		"recordings": null,
-		"latestLogisticsSemester": "Fall",
-		"latestLogisticsSemesterYear": 2023,
-		"gradesBreakdown": [{
-				"color": "yellow",
-				"classcolor": "homework",
-				"component": "Homework",
-				"percentage": 45
+		"professors": [
+			{
+				"professorName": "Paul Blaer",
+				"ratingAverage": 9,
+				"ratingMaxRating": 10,
+				"ratingTotalScore": 18,
+				"ratingTotalVotes": 2,
+				"ratingDistribution": [
+					{
+						"rating": 5,
+						"vote": 1
+					},
+					{
+						"rating": 4,
+						"vote": 1
+					},
+					{
+						"rating": 3,
+						"vote": 0
+					},
+					{
+						"rating": 2,
+						"vote": 0
+					},
+					{
+						"rating": 1,
+						"vote": 0
+					}
+				],
+				"curve": true,
+				"difficultyAverage": 3,
+				"difficultyMaxRating": 10,
+				"difficultyTotalScore": 6,
+				"difficultyTotalVotes": 2,
+				"semester": [
+					"Fall"
+				],
+				"examsProjectsBased": [
+					"Exams"
+				],
+				"attendance": "Graded",
+				"recordings": null,
+				"latestLogisticsSemester": "Fall",
+				"latestLogisticsSemesterYear": 2023,
+				"gradesBreakdown": [
+					{
+						"color": "yellow",
+						"classcolor": "homework",
+						"component": "Homework",
+						"percentage": 45
+					},
+					{
+						"color": "#EA9999",
+						"classcolor": "exam1",
+						"component": "Midterm1",
+						"percentage": 12
+					},
+					{
+						"color": "#E06666",
+						"classcolor": "exam2",
+						"component": "Midterm2",
+						"percentage": 12
+					},
+					{
+						"color": "#CF2A27",
+						"classcolor": "exam3",
+						"component": "Final",
+						"percentage": 26
+					},
+					{
+						"color": "#93C47D",
+						"classcolor": "attendance",
+						"component": "Attendance",
+						"percentage": 5
+					}
+				],
+				"workload": [
+					{
+						"workloadHours": "0-3",
+						"votes": 0
+					},
+					{
+						"workloadHours": "3-6",
+						"votes": 2
+					},
+					{
+						"workloadHours": "6-9",
+						"votes": 0
+					},
+					{
+						"workloadHours": "9-12",
+						"votes": 0
+					},
+					{
+						"workloadHours": "12+",
+						"votes": 0
+					}
+				],
+				"additionalComments": [
+					{
+						"comment": "Loved this professor, he was the best!"
+					}
+				]
 			},
 			{
-				"color": "#EA9999",
-				"classcolor": "exam1", 
-				"component": "Midterm1",
-				"percentage": 12
-			},
-			{
-				"color": "#E06666",
-				"classcolor": "exam2", 
-				"component": "Midterm2",
-				"percentage": 12
-			},
-			{
-				"color": "#CF2A27",
-				"classcolor": "exam3", 
-				"component": "Final",
-				"percentage": 26
-			},
-			{
-				"color": "#93C47D",
-				"classcolor": "attendance", 
-				"component": "Attendance",
-				"percentage": 5
+				"professorName": "Adam Cannon",
+				"ratingAverage": 9,
+				"ratingMaxRating": 10,
+				"ratingTotalScore": 18,
+				"ratingTotalVotes": 2,
+				"ratingDistribution": [
+					{
+						"rating": 5,
+						"vote": 1
+					},
+					{
+						"rating": 4,
+						"vote": 1
+					},
+					{
+						"rating": 3,
+						"vote": 0
+					},
+					{
+						"rating": 2,
+						"vote": 0
+					},
+					{
+						"rating": 1,
+						"vote": 0
+					}
+				],
+				"curve": true,
+				"difficultyAverage": 4,
+				"difficultyMaxRating": 10,
+				"difficultyTotalScore": 8,
+				"difficultyTotalVotes": 2,
+				"semester": [
+					"Spring"
+				],
+				"examsProjectsBased": [
+					"Exams"
+				],
+				"attendance": "In-class quizzes every other week",
+				"recordings": null,
+				"latestLogisticsSemester": "Spring",
+				"latestLogisticsSemesterYear": 2022,
+				"gradesBreakdown": [
+					{
+						"color": "yellow",
+						"classcolor": "homework",
+						"component": "Homework",
+						"percentage": 50
+					},
+					{
+						"color": "#93C47D",
+						"classcolor": "attendance",
+						"component": "In-class quizzes",
+						"percentage": 15
+					},
+					{
+						"color": "#EA9999",
+						"classcolor": "exam1",
+						"component": "Final",
+						"percentage": 35
+					}
+				],
+				"workload": [
+					{
+						"workloadHours": "0-3",
+						"votes": 0
+					},
+					{
+						"workloadHours": "3-6",
+						"votes": 2
+					},
+					{
+						"workloadHours": "6-9",
+						"votes": 0
+					},
+					{
+						"workloadHours": "9-12",
+						"votes": 0
+					},
+					{
+						"workloadHours": "12+",
+						"votes": 0
+					}
+				],
+				"additionalComments": [
+				]
 			}
-		],
-		"workload": [{
-				"workloadHours": "0-3",
-				"votes": 0
-			},
-			{
-				"workloadHours": "3-6",
-				"votes": 2
-			},
-			{
-				"workloadHours": "6-9",
-				"votes": 0
-			},
-			{
-				"workloadHours": "9-12",
-				"votes": 0
-			},
-			{
-				"workloadHours": "12+",
-				"votes": 0
-			}
-		],
-		"additionalComments": [
-			"Loved this professor, he was the best!"
 		]
-
-	}, {
-		"professorName": "Adam Cannon",
-		"ratingAverage": 9,
-		"ratingMaxRating": 10,
-		"ratingTotalScore": 18,
-		"ratingTotalVotes": 2,
-		"ratingDistribution": [{
-				"rating": 5,
-				"vote": 1
-			},
-			{
-				"rating": 4,
-				"vote": 1
-			},
-			{
-				"rating": 3,
-				"vote": 0
-			},
-			{
-				"rating": 2,
-				"vote": 0
-			},
-			{
-				"rating": 1,
-				"vote": 0
-			}
-		],
-		"curve": true,
-		"difficultyAverage": 4,
-		"difficultyMaxRating": 10,
-		"difficultyTotalScore": 8,
-		"difficultyTotalVotes": 2,
-		"semester": ["Spring"],
-		"examsProjectsBased": ["Exams"],
-		"attendance": "In-class quizzes every other week",
-		"recordings": null,
-		"latestLogisticsSemester": "Spring",
-		"latestLogisticsSemesterYear": 2022,
-		"gradesBreakdown": [{
-				"color": "yellow",
-				"classcolor": "homework",
-				"component": "Homework",
-				"percentage": 50
-			},
-			{
-				"color": "#93C47D",
-				"classcolor": "attendance",
-				"component": "In-class quizzes",
-				"percentage": 15
-			},
-			{
-				"color": "#EA9999",
-				"classcolor": "exam1",
-				"component": "Final",
-				"percentage": 35
-			}
-		],
-		"workload": [{
-				"workloadHours": "0-3",
-				"votes": 0
-			},
-			{
-				"workloadHours": "3-6",
-				"votes": 2
-			},
-			{
-				"workloadHours": "6-9",
-				"votes": 0
-			},
-			{
-				"workloadHours": "9-12",
-				"votes": 0
-			},
-			{
-				"workloadHours": "12+",
-				"votes": 0
-			}
-		],
-		"additionalComments": []
-
-	}]
-}
+	}
 ]
