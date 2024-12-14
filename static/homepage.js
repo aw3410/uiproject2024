@@ -74,6 +74,9 @@ function search(){
 
 
 }
+function redirectToReview() {
+    window.location.href = '/reviewform';
+}
 
 $(document).ready(function () {
     $('#filterbutton').click(function () {
