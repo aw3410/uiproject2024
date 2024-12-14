@@ -42,55 +42,68 @@
                 "recordings": null,
                 "latestLogisticsSemester": "Fall",
                 "latestLogisticsSemesterYear": 2023,
-                "gradesBreakdown": [{
-                                "component": "Homework",
-                                "percentage": 45
-                        },
-                        {
-                                "component": "Midterm1",
-                                "percentage": 12
-                        },
-                        {
-                                "component": "Midterm2",
-                                "percentage": 12
-                        },
-                        {
-                                "component": "final",
-                                "percentage": 26
-                        },
-                        {
-                                "component": "attendance",
-                                "percentage": 5
-                        }
-                ],
+                "gradesBreakdown": [
+		        {
+			        "color": "yellow",
+				"classcolor": "homework",
+				"component": "Homework",
+				"percentage": 45
+			},
+			{
+				"color": "#EA9999",
+				"classcolor": "exam1",
+				"component": "Midterm1",
+				"percentage": 12
+			},
+			{
+				"color": "#E06666",
+				"classcolor": "exam2",
+				"component": "Midterm2",
+				"percentage": 12
+			},
+			{
+				"color": "#CF2A27",
+				"classcolor": "exam3",
+				"component": "Final",
+				"percentage": 26
+			},
+			{
+				"color": "#93C47D",
+				"classcolor": "attendance",
+				"component": "Attendance",
+				"percentage": 5
+			}
+		],
                 "workload": [{
-                                "workloadHours": "0-3 Hours",
-                                "votes": 1
-                        },
-                        {
-                                "workloadHours": "3-6 Hours",
+                                "workloadHours": "0-3",
                                 "votes": 0
                         },
                         {
-                                "workloadHours": "6-9 Hours",
+                                "workloadHours": "3-6",
+                                "votes": 2
+                        },
+                        {
+                                "workloadHours": "6-9",
                                 "votes": 1
                         },
                         {
-                                "workloadHours": "9-12 Hours",
+                                "workloadHours": "9-12",
                                 "votes": 1
                         },
                         {
-                                "workloadHours": "12+ Hours",
+                                "workloadHours": "12+",
                                 "votes": 1
                         }
                 ],
                 "additionalComments": [
-                        "Loved this professor, he was the best!"
+                        {
+                                "comment": "Loved this professor, he was the best!"
+                        }
                 ]
         }]
 },
 {
-        "professorName": "Addam Cannon",
+        "professorName": "Adam Cannon",
         "overallRating": 4.5,
         "totalRating": 5,
         "ratingVotes": 2,
@@ -133,38 +146,45 @@
                 "recordings": null,
                 "latestLogisticsSemester": "Spring",
                 "latestLogisticsSemesterYear": 2022,
-                "gradesBreakdown": [{
+                "gradesBreakdown": [
+                        {
+                                "color": "yellow",
+                                "classcolor": "homework",
                                 "component": "Homework",
                                 "percentage": 50
                         },
                         {
+                                "color": "#93C47D",
+                                "classcolor": "attendance",
                                 "component": "In-class quizzes",
                                 "percentage": 15
                         },
                         {
+                                "color": "#EA9999",
+                                "classcolor": "exam1",
                                 "component": "Final",
                                 "percentage": 35
                         }
                 ],
                 "workload": [{
-                                "workloadHours": "0-3 Hours",
-                                "votes": 1
-                        },
-                        {
-                                "workloadHours": "3-6 Hours",
+                                "workloadHours": "0-3",
                                 "votes": 0
                         },
                         {
+                                "workloadHours": "3-6 Hours",
+                                "votes": 2
+                        },
+                        {
                                 "workloadHours": "6-9 Hours",
-                                "votes": 1
+                                "votes": 0
                         },
                         {
                                 "workloadHours": "9-12 Hours",
-                                "votes": 1
+                                "votes": 0
                         },
                         {
                                 "workloadHours": "12+ Hours",
-                                "votes": 1
+                                "votes": 0
                         }
                 ],
                 "additionalComments": []
