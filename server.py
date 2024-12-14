@@ -192,6 +192,170 @@ def search():
 
     return jsonify(results)
 
+
+def createnewcourseinfo(data):
+    courseCode = data.get('courseCode')
+    courseName = data.get('courseName')
+    industry_relevance_rating = data.get('industry_relevance_rating')
+    level = data.get('level')
+    requirement = data.get('requirement')
+    prerequisites = data.get('prerequisites')
+        
+    course = {
+        "courseCode" : courseCode,
+        "courseName": courseName,
+        "industryRelevanceAverage": industry_relevance_rating, #this is the first rating
+        "industryRelevanceMaxRating": 5,
+        "industryRelevanceTotalScore": industry_relevance_rating,
+        "industryRelevanceTotalVotes": 1,
+        "level": level,
+        "professors":[],
+        "requirement": requirement,
+        "prerequisites": prerequisites
+    }
+    return course
+
+def createprofforcourse(data,initialWorkloadHours):
+    professor = data.get('professors')
+    semester = data.get('semesters')
+    examprojectsdropdown = data.get('examorprojectdropdown')
+    professor_rating = data.get('professor_rating')
+    difficulty_rating = data.get('difficulty_rating')
+    weekly_workload = data.get('weeklyworkload')
+    curve = data.get('curve')
+    recordings = data.get('recordings')
+    attendance = data.get('attendance')
+    additionalcomments = data.get('additionalcomments')
+    gradesBreakdown = data.get('gradesBreakdown')
+
+    prof = {
+            "professorName": professor,
+            "ratingAverage": professor_rating,
+            "ratingMaxRating": 10,
+            "ratingTotalScore": professor_rating,
+            "ratingTotalVotes": 1,
+            "curve": curve,
+            "difficultyAverage": difficulty_rating,
+            "difficultyMaxRating": 10,
+            "difficultyTotalScore": difficulty_rating,
+            "difficultyTotalVotes": 1,
+            "examsProjectsBased": [],
+            "attendance": attendance,
+            "recordings": recordings,
+            "gradesBreakdown": gradesBreakdown,
+            "additionalComments": [],
+            "semester": [],
+            "workload": initialWorkloadHours
+        }
+
+    if semester:
+        sem, year = semester.split()
+        prof["semester"].append(sem)
+        prof["latestLogisticsSemester"] = sem
+        prof["latestLogisticsSemesterYear"] = year
+
+    if additionalcomments:
+        prof['additionalComments'].append(additionalcomments)
+
+    if examprojectsdropdown:
+        if examprojectsdropdown=="Both":
+            prof["examsProjectsBased"].append("Exams-Based")
+            prof["examsProjectsBased"].append("Project-Based")
+        elif examprojectsdropdown=="Neither":
+            pass
+        else:
+            prof["examsProjectsBased"].append(examprojectsdropdown)
+
+    if weekly_workload:
+        for workload in prof["workload"]:
+            if workload["workloadHours"] == weekly_workload:
+                workload["votes"]+=1
+    return prof
+
+def createnewprofinfo(data,initialRatingDistribution):
+    professor = data.get('professors')
+    professor_rating = data.get('professor_rating')
+   
+    prof = {
+            "professorName": professor,
+            "overallRating": professor_rating/2,
+            "totalRating": professor_rating,
+            "ratingVotes": 1,
+            "ratingDistribution": initialRatingDistribution,
+            "courses":[]
+        }
+
+    if professor_rating:
+        prof_rating= math.floor(professor_rating / 2)
+        for rating in prof["ratingDistribution"]:
+            if rating["rating"] == prof_rating:
+                rating["vote"]+=1
+    return prof
+
+def createcourseforprof(data, initialWorkloadHours):
+    courseCode = data.get('courseCode')
+    courseName = data.get('courseName')
+    semester = data.get('semesters')
+    examprojectsdropdown = data.get('examorprojectdropdown')
+    professor_rating = data.get('professor_rating')
+    difficulty_rating = data.get('difficulty_rating')
+    weekly_workload = data.get('weeklyworkload')
+    curve = data.get('curve')
+    recordings = data.get('recordings')
+    attendance = data.get('attendance')
+    additionalcomments = data.get('additionalcomments')
+    # We don't get these fields from course feedback form, adding here so the APIs 
+    # can be used to add full new data (like if someone uploads the syllabus and we use that to update our data,
+    # we can use the same API to update)
+    gradesBreakdown = data.get('gradesBreakdown')
+
+
+    course = {
+        "courseCode" : courseCode,
+        "courseName": courseName,
+        "ratingAverage": professor_rating,
+        "ratingMaxRating": 10,
+        "ratingTotalScore": professor_rating,
+        "ratingTotalVotes": 1,
+        "curve": curve,
+        "difficultyAverage": difficulty_rating,
+        "difficultyMaxRating": 10,
+        "difficultyTotalScore": difficulty_rating,
+        "difficultyTotalVotes": 1,
+        "examsProjectsBased": [],
+        "attendance": attendance,
+        "recordings": recordings,
+        "gradesBreakdown": gradesBreakdown,
+        "additionalComments": [],
+        "semester": [],
+        "workload": initialWorkloadHours
+    }
+
+    if semester:
+        sem, year = semester.split()
+        course["semester"].append(sem)
+        course["latestLogisticsSemester"] = sem
+        course["latestLogisticsSemesterYear"] = year
+    
+    if additionalcomments:
+        course['additionalComments'].append(additionalcomments)
+
+    if examprojectsdropdown:
+        if examprojectsdropdown=="Both":
+            course["examsProjectsBased"].append("Exams-Based")
+            course["examsProjectsBased"].append("Project-Based")
+        elif examprojectsdropdown=="Neither":
+            pass
+        else:
+            course["examsProjectsBased"].append(examprojectsdropdown)
+    
+    if weekly_workload:
+        for workload in course["workload"]:
+            if workload["workloadHours"] == weekly_workload:
+                workload["votes"]+=1
+    return course
+
+
 @app.route('/submitreview', methods=['POST'])
 def submitreview():
     data = request.get_json() 
@@ -217,6 +381,23 @@ def submitreview():
     gradesBreakdown = data.get('gradesBreakdown')
 
     print(courseCode)
+
+    initialWorkloadHours = [
+    {"workloadHours": "0-3 Hours", "votes": 0},
+    {"workloadHours": "3-6 Hours", "votes": 0},
+    {"workloadHours": "6-9 Hours", "votes": 0},
+    {"workloadHours": "9-12 Hours", "votes": 0},
+    {"workloadHours": "12+ Hours", "votes": 0}
+    ]
+
+    initialRatingDistribution = [
+    {"rating": 5, "vote": 0},
+    {"rating": 4, "vote": 0},
+    {"rating": 3, "vote": 0},
+    {"rating": 2, "vote": 0},
+    {"rating": 1, "vote": 0}
+    ]
+    
     # Update course list to add the new course
     if not any(course['courseCode'] == courseCode for course in course_list):
         course_list.append({
@@ -224,189 +405,27 @@ def submitreview():
             "courseName": courseCode,
             "courseURL": f"/courses/{courseCode}"
         })
-        course = {
-            "courseCode" : courseCode,
-            "courseName": courseName,
-            "industryRelevanceAverage": industry_relevance_rating, #this is the first rating
-            "industryRelevanceMaxRating": 5,
-            "industryRelevanceTotalScore": industry_relevance_rating,
-            "industryRelevanceTotalVotes": 1,
-            "level": level,
-            "professors":[],
-            "requirement": requirement,
-            "prerequisites": prerequisites
-        }
+        #Update course info
+        course = createnewcourseinfo(data)
+        #Add prof to course
+        prof = createprofforcourse(data, initialWorkloadHours)
 
-        prof = {
-            "professorName": professor,
-            "ratingAverage": professor_rating,
-            "ratingMaxRating": 10,
-            "ratingTotalScore": professor_rating,
-            "ratingTotalVotes": 1,
-            "curve": curve,
-            "difficultyAverage": difficulty_rating,
-            "difficultyMaxRating": 10,
-            "difficultyTotalScore": difficulty_rating,
-            "difficultyTotalVotes": 1,
-            "examsProjectsBased": [],
-            "attendance": attendance,
-            "recordings": recordings,
-            "gradesBreakdown": gradesBreakdown,
-            "additionalComments": [],
-            "semester": [],
-            "workload": [{
-				"workloadHours": "0-3 Hours",
-				"votes": 0
-			},
-			{
-				"workloadHours": "3-6 Hours",
-				"votes": 0
-			},
-			{
-				"workloadHours": "6-9 Hours",
-				"votes": 0
-			},
-			{
-				"workloadHours": "9-12 Hours",
-				"votes": 0
-			},
-			{
-				"workloadHours": "12+ Hours",
-				"votes": 0
-			}
-		]
-        }
-
-        if semester:
-            sem, year = semester.split()
-            prof["semester"].append(sem)
-            prof["latestLogisticsSemester"] = sem
-            prof["latestLogisticsSemesterYear"] = year
-        
-        if additionalcomments:
-            prof['additionalComments'].append(additionalcomments)
-
-        if examprojectsdropdown:
-            if examprojectsdropdown=="Both":
-                prof["examsProjectsBased"].append("Exams-Based")
-                prof["examsProjectsBased"].append("Project-Based")
-            elif examprojectsdropdown=="Neither":
-                pass
-            else:
-                prof["examsProjectsBased"].append(examprojectsdropdown)
-        
-        if weekly_workload:
-            for workload in prof["workload"]:
-                if workload["workloadHours"] == weekly_workload:
-                    workload["votes"]+=1
-        
         course["professors"].append(prof)
         course_data.append(course)
+    
 
     # Update prof list to add new professor
     if not any(prof['professorName'] == professor for prof in prof_list):
         prof_list.append({"professorName": professor})
 
-        prof = {
-            "professorName": professor,
-            "overallRating": professor_rating/2,
-            "totalRating": professor_rating,
-            "ratingVotes": 1,
-            "ratingDistribution": [{
-                        "rating": 5,
-                        "vote": 0
-                },
-                {
-                        "rating": 4,
-                        "vote": 0
-                },
-                {
-                        "rating": 3,
-                        "vote": 0
-                },
-                {
-                        "rating": 2,
-                        "vote": 0
-                },
-                {
-                        "rating": 1,
-                        "vote": 0
-                }
-            ],
-            "courses":[]
-        }
+        #add new professor to professor_course_data
+        prof = createnewprofinfo(data, initialRatingDistribution)
+        course = createcourseforprof(data, initialWorkloadHours)
 
-        if professor_rating:
-            prof_rating= math.floor(professor_rating / 2)
-            for rating in prof["ratingDistribution"]:
-                if rating["rating"] == prof_rating:
-                    rating["vote"]+=1
+        prof["courses"].append(course)
+        professor_course_data.append(prof)
+    
 
-            course = {
-                "courseCode" : courseCode,
-                "courseName": courseName,
-                "ratingAverage": professor_rating,
-                "ratingMaxRating": 10,
-                "ratingTotalScore": professor_rating,
-                "ratingTotalVotes": 1,
-                "curve": curve,
-                "difficultyAverage": difficulty_rating,
-                "difficultyMaxRating": 10,
-                "difficultyTotalScore": difficulty_rating,
-                "difficultyTotalVotes": 1,
-                "examsProjectsBased": [],
-                "attendance": attendance,
-                "recordings": recordings,
-                "gradesBreakdown": gradesBreakdown,
-                "additionalComments": [],
-                "semester": [],
-                "workload": [{
-                    "workloadHours": "0-3 Hours",
-                    "votes": 0
-                },
-                {
-                    "workloadHours": "3-6 Hours",
-                    "votes": 0
-                },
-                {
-                    "workloadHours": "6-9 Hours",
-                    "votes": 0
-                },
-                {
-                    "workloadHours": "9-12 Hours",
-                    "votes": 0
-                },
-                {
-                    "workloadHours": "12+ Hours",
-                    "votes": 0
-                }
-            ]
-            }
-
-            if semester:
-                sem, year = semester.split()
-                course["semester"].append(sem)
-                course["latestLogisticsSemester"] = sem
-                course["latestLogisticsSemesterYear"] = year
-            
-            if additionalcomments:
-                course['additionalComments'].append(additionalcomments)
-
-            if examprojectsdropdown:
-                if examprojectsdropdown=="Both":
-                    course["examsProjectsBased"].append("Exams-Based")
-                    course["examsProjectsBased"].append("Project-Based")
-                elif examprojectsdropdown=="Neither":
-                    pass
-                else:
-                    course["examsProjectsBased"].append(examprojectsdropdown)
-            
-            if weekly_workload:
-                for workload in course["workload"]:
-                    if workload["workloadHours"] == weekly_workload:
-                        workload["votes"]+=1
-            prof["courses"].append(course)
-            professor_course_data.append(prof)
 
     
     return jsonify(course_data)
