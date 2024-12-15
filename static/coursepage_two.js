@@ -87,6 +87,38 @@ function addbarchart(professors) {
     })
 
 }
+function search(){
+    var professors = $('#listofprofessors a')
+    var courses = $('#listofcourses a')
+
+    let searchText = $('#searchbox').val().toLowerCase();
+    $('#result-box').remove();
+
+    courses.each(function(){
+        let courseName = $(this).text().split("Leave a Review")[0].trim();
+        let courseLink = $(this).attr('href')
+        if (courseName.toLowerCase().includes(searchText)){
+            $('#leaveareview').append(`
+                <div>
+                    <a id="result-box" href="${courseLink}"> ${courseName}</a>
+                <div>
+            `);
+        }
+    })
+    professors.each(function(){
+        let profName = $(this).text().split("Leave a Review")[0].trim();
+        let profLink = $(this).attr('href')
+        if (profName.toLowerCase().includes(searchText)){
+            $('#leaveareview').append(`
+                <div>
+                    <a id="result-box" href="${profLink}"> ${profName}</a>
+                <div>
+            `);
+        }
+    })
+
+}
+
 
 $(document).ready(function () {
     if (data) {
@@ -214,6 +246,13 @@ $(document).ready(function () {
         // Display an error message if no data is available
         $('#courseDetails').html('<p>Error: Course data is not available.</p>');
     }
+
+    $('#searchbox').on('focus', function () {
+        // If search box is empty when clicked, redirect to the home page
+        if (!$(this).val()) {
+            window.location.href = '/';
+        }
+    });
 
     $('#filterbutton').click(function () {
         console.log("Filter button clicked!");
