@@ -243,7 +243,7 @@ tbody{
     justify-content: space-between;
     height: 100%;
     background-color: #EEEEEE;
-    ; 
+    
 }
 
 .coursename {
@@ -252,14 +252,15 @@ tbody{
     color: white; 
     border-color: black; 
     text-align: center;
+    padding: 1%; 
 }
 
 .courseinformationline {
     display: flex;
     justify-content: space-evenly;
     gap: 8%;
-    padding-top: 3%;
     width: 100%; 
+    padding-top: 3%; 
 }
 
 .boxeswithbestrating {
@@ -282,6 +283,7 @@ tbody{
     /* original background */
     /* background-color: #DDDDDD; */
     margin-top: 1%;
+    
 }
 
 .color-legend {
