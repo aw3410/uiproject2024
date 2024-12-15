@@ -204,11 +204,12 @@ def search():
 def createnewcourseinfo(data):
 	courseCode = data.get('courseCode')
 	courseName = data.get('courseName')
-	industry_relevance_rating = data.get('industry_relevance_rating')
+	industry_relevance_rating = data.get('industryRelevance')
 	level = data.get('level')
 	requirement = data.get('requirement')
 	prerequisites = data.get('prerequisites')
 	semester = data.get('semester')
+	sem,_ = semester.split(' ')
 
 		
 	course = {
@@ -232,16 +233,16 @@ def createnewcourseinfo(data):
 	return course
 
 def createprofforcourse(data,initialWorkloadHours):
-	professor = data.get('professors')
-	semester = data.get('semesters')
-	examprojectsdropdown = data.get('examorprojectdropdown')
-	professor_rating = data.get('professor_rating')
-	difficulty_rating = data.get('difficulty_rating')
-	weekly_workload = data.get('weeklyworkload')
+	professor = data.get('professor')
+	semester = data.get('semester')
+	examprojectsdropdown = data.get('examOrProject')
+	professor_rating = int(data.get('professorRating'))
+	difficulty_rating = int(data.get('difficultyRating'))
+	weekly_workload = data.get('workload')
 	curve = data.get('curve')
 	recordings = data.get('recordings')
 	attendance = data.get('attendance')
-	additionalcomments = data.get('additionalcomments')
+	additionalcomments = data.get('additionalComments')
 	gradesBreakdown = data.get('gradesBreakdown')
 
 	prof = {
@@ -293,8 +294,8 @@ def createprofforcourse(data,initialWorkloadHours):
 	return prof
 
 def createnewprofinfo(data,initialRatingDistribution):
-	professor = data.get('professors')
-	professor_rating = data.get('professor_rating')
+	professor = data.get('professor')
+	professor_rating = int(data.get('professorRating'))
 	_,lastname = professor.split()
 	
 	prof = {
@@ -319,15 +320,15 @@ def createnewprofinfo(data,initialRatingDistribution):
 def createcourseforprof(data, initialWorkloadHours):
 	courseCode = data.get('courseCode')
 	courseName = data.get('courseName')
-	semester = data.get('semesters')
-	examprojectsdropdown = data.get('examorprojectdropdown')
-	professor_rating = data.get('professor_rating')
-	difficulty_rating = data.get('difficulty_rating')
-	weekly_workload = data.get('weeklyworkload')
+	semester = data.get('semester')
+	examprojectsdropdown = data.get('examOrProject')
+	professor_rating = int(data.get('professorRating'))
+	difficulty_rating= int(data.get('difficultyRating'))
+	weekly_workload = data.get('workload')
 	curve = data.get('curve')
 	recordings = data.get('recordings')
 	attendance = data.get('attendance')
-	additionalcomments = data.get('additionalcomments')
+	additionalcomments = data.get('additionalComments')
 	# We don't get these fields from course feedback form, adding here so the APIs 
 	# can be used to add full new data (like if someone uploads the syllabus and we use that to update our data,
 	# we can use the same API to update)
@@ -356,7 +357,7 @@ def createcourseforprof(data, initialWorkloadHours):
 	}
 
 	if semester:
-		sem, year = semester.split()
+		sem, year = semester.split(' ')
 		course["semester"].append(sem)
 		course["latestLogisticsSemester"] = sem
 		course["latestLogisticsSemesterYear"]= int(year)
@@ -384,18 +385,19 @@ def createcourseforprof(data, initialWorkloadHours):
 	return course
 
 def updateprof(data, prof):
-	weekly_workload = data.get('weeklyworkload')
+	weekly_workload = data.get('workload')
 	data = request.get_json() 
 	semester = data.get('semester')
 	feedback_sem, feedback_year = semester.split(' ')
-	examprojectsdropdown = data.get('examorprojectdropdown')
-	professor_rating = data.get('professor_rating')
-	difficulty_rating = data.get('difficulty_rating')
+	examprojectsdropdown = data.get('examOrProject')
+	professor_rating = int(data.get('professorRating'))
+	difficulty_rating = int(data.get('difficultyRating'))
 	curve = data.get('curve')
 	recordings = data.get('recordings')
 	attendance = data.get('attendance')
-	additionalcomments = data.get('additionalcomments')
+	additionalcomments = data.get('additionalComments')
 	gradesBreakdown = data.get('gradesBreakdown')
+	
 
 	if professor_rating:
 			prof["ratingTotalScore"]+=professor_rating
@@ -408,8 +410,9 @@ def updateprof(data, prof):
 		prof["difficultyAverage"] = round(prof["difficultyTotalScore"]/prof["difficultyTotalVotes"],2)
 	
 	if semester:
-		if not any(semester==sem for sem in prof["semester"]):
-			prof["semester"].append(semester)
+		feedback_sem, _ = semester.split(' ')
+		if not any(feedback_sem==sem for sem in prof["semester"]):
+			prof["semester"].append(feedback_sem)
 
 	if additionalcomments:
 		prof["additionalComments"].append({
@@ -456,15 +459,16 @@ def updatecourse(data, course):
 	data = request.get_json() 
 	semester = data.get('semester')
 	feedback_sem, feedback_year = semester.split(' ')
-	examprojectsdropdown = data.get('examorprojectdropdown')
-	professor_rating = data.get('professor_rating')
-	difficulty_rating = data.get('difficulty_rating')
+	examprojectsdropdown = data.get('examOrProject')
+	professor_rating = int(data.get('professorRating'))
+	difficulty_rating = int(data.get('difficultyRating'))
 	curve = data.get('curve')
 	recordings = data.get('recordings')
 	attendance = data.get('attendance')
-	additionalcomments = data.get('additionalcomments')
+	additionalcomments = data.get('additionalComments')
 	gradesBreakdown = data.get('gradesBreakdown')
-	weekly_workload = data.get('weeklyworkload')
+	weekly_workload = data.get('workload')
+	
 
 	if professor_rating:
 			course["ratingTotalScore"]+=professor_rating
@@ -529,6 +533,7 @@ def submitreview():
 	courseName = data.get('courseName')
 	professor = data.get('professor')
 	semester = data.get('semester')
+	feedback_sem, _ = semester.split(' ')
 	professor_rating = int(data.get('professorRating'))
 	industry_relevance_rating = int(data.get('industryRelevance'))
 	
@@ -563,7 +568,8 @@ def submitreview():
 				course["industryRelevanceAverage"] = round(course["industryRelevanceTotalScore"] / course["industryRelevanceTotalVotes"], 2)
 
 			if semester:
-				course["semestersOffered"].append(semester)
+				if not any(feedback_sem==sem for sem in course["semestersOffered"]):
+					course["semestersOffered"].append(feedback_sem)
 	
 			if prerequisites:
 					course["prerequisites"]= prerequisites
