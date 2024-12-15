@@ -4,6 +4,7 @@
 	"overallRating": 4.5,
 	"totalRating": 9,
 	"ratingVotes": 2,
+	"reviewcount": "2",
 	"ratingDistribution": [{
 			"rating": 5,
 			"vote": 1
@@ -109,6 +110,7 @@
 	"overallRating": 4.5,
 	"totalRating": 9,
 	"ratingVotes": 2,
+	"reviewcount": "2",
 	"ratingDistribution": [{
 			"rating": 5,
 			"vote": 1
@@ -199,6 +201,7 @@
 	"overallRating": 3.2,
 	"totalRating": 16,
 	"ratingVotes": 5,
+	"reviewcount": "2",
 	"ratingDistribution": [{
 			"rating": 5,
 			"vote": 0
@@ -369,6 +372,7 @@
 	"overallRating": 4,
 	"totalRating": 8,
 	"ratingVotes": 2,
+	"reviewcount": "2",
 	"ratingDistribution": [{
 			"rating": 5,
 			"vote": 0

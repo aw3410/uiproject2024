@@ -2,6 +2,7 @@
 	{
 		"courseCode": "COMS1004",
 		"courseName": "Introduction to Computer Science / Programming in Java",
+		"reviewcount": "2",
 		"industryRelevanceAverage": 3.5,
 		"industryRelevanceMaxRating": 5,
 		"industryRelevanceTotalScore": 14,
@@ -210,6 +211,7 @@
 	{
 		"courseCode": "COMS3203",
 		"courseName": "Discrete Mathematics",
+		"reviewcount": "2",
 		"industryRelevanceAverage": 1.5,
 		"industryRelevanceMaxRating": 5,
 		"industryRelevanceTotalScore": 7,
@@ -418,6 +420,7 @@
 	{
 		"courseCode": "COMS4701",
 		"courseName": "Artificial Intelligence",
+		"reviewcount": "2",
 		"industryRelevanceAverage": 2.67,
 		"industryRelevanceMaxRating": 5,
 		"industryRelevanceTotalScore": 8,
