@@ -216,10 +216,9 @@
 		"industryRelevanceTotalVotes": 3,
 		"level": "Undergraduate",
 		"requirement": "Core",
-		"prerequisites": "An introductory course",
+		"prerequisites": ["An introductory course"],
 		"semestersOffered": [
 			"Fall",
-			"Summer",
 			"Spring"
 		],
 		"professors": [
