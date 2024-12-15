@@ -634,7 +634,11 @@ def submitreview():
 		prof["courses"].append(course)
 		professor_course_data.append(prof)
 
-	return jsonify(course_data)
+	return jsonify({
+    'status': 'success',
+    'message': 'Review submitted successfully',
+    # 'data': course_data
+})
 
 
 if __name__ == '__main__':
