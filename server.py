@@ -61,7 +61,9 @@ def profcourseinfo(profname):
     if prof is None:
         abort(404, description="Professor not found")
 
-    review_count = int(prof.get('reviewcount', 0))
+    professor = next((professor for professor in prof_list if professor['lastname'] == profname), None)
+    
+    review_count = int(professor.get('reviewcount', 0))
 
     css_file = 'professorpage_one.css' if review_count == 1 else 'professorpage_two.css'
     

@@ -1,16 +1,20 @@
 [{
+	"lastname":"blaer",
 	"professorName": "Paul Blaer",
-	"reviewcount": "2"
+	"reviewcount": 1
 }, {
+	"lastname":"cannon",
 	"professorName": "Adam Cannon",
-	"reviewcount": "2"
+	"reviewcount": 2
 },
 {
+	"lastname":"dear",
 	"professorName": "Tony Dear",
-	"reviewcount": "2"
+	"reviewcount": 2
 },
 {
+	"lastname":"aouissi",
 	"professorName": "Ansaf Salleb-Aouissi",
-	"reviewcount": "2"
+	"reviewcount": 2
 }
 ]
