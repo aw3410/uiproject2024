@@ -22,13 +22,14 @@
         <button id="homebutton"><i class="fa fa-home"></i></button>
     </span>
     <span class="coursefeedbackformline">
-        <!-- https://www.w3schools.com/tags/tag_datalist.asp -->
-        <!-- <label for "Courses">Courses:</label> -->
+       
         <!-- TODO: to make it dynamic, we can fill the courses from GET /courses API-->
         <input list="dropdowncourses" name="courses" class="dropdowninput" placeholder="Course">
         <datalist id="dropdowncourses">
             <option value="COMS1004: Introduction to Computer Science/ Programming in Java">
             <option value="COMS3203: Discrete Mathematics">
+            <option value="COMS4701: Artificial Intelligence">
+
         </datalist>
         <!-- <label for "professors">Professors:</label> -->
          <!-- TODO: to make it dynamic, we can fill the professors from GET /professors API-->
@@ -36,6 +37,7 @@
         <datalist id="dropdownprofessors">
             <option value="Paul Blaer">
             <option value="Adam Cannon">
+            <option value="Tony Dear">
         </datalist>
         <!-- <label for "semesters">Semester:</label> -->
         <input list="dropdownsemesters" name="semesters" class="dropdowninput" placeholder="Semester">
@@ -201,6 +203,8 @@
         <a id="gotohomepage" href="/">
             <i class="fa fa-home"></i> Go to Homepage
         </a>
-        <button type="submit" id = "submitbutton">Submit</button>
+        <a id="gotohomepage" href="/">
+            Submit
+        </a>
     </span>
 </body>

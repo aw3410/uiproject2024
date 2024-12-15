@@ -335,9 +335,6 @@ tbody{
     position: fixed;
     border-style: solid;
     width: 12%;
-    /* original background */
-    /* background-color: #EEEEEE; */
-    /* blue background */
     background-color: #003865; 
     color: white;
     border-color: black; 
@@ -385,10 +382,8 @@ tbody{
 }
   
 #coursesandprofessorssidebar a.active {
-   
     background-color: #9bcbeb;
     color: black;
-   
 }
 
 .coursesandprofessorscollapsible{

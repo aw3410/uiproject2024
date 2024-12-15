@@ -177,7 +177,10 @@ tbody{
 }
 
 .reviewbutton {
-    font-size: 1em;
+    background-color: white;
+    color: #003865;
+    border: 1px solid #003865;
+    cursor: pointer;
 }
 
 #contentreviewbutton{
@@ -394,9 +397,6 @@ tbody{
     position: fixed;
     border-style: solid;
     width: 12%;
-    /* original background */
-    /* background-color: #EEEEEE; */
-    /* blue background */
     background-color: #003865; 
     color: white;
     border-color: black; 
@@ -416,19 +416,11 @@ tbody{
     display: block;
     padding: 8%;
     text-decoration: none;
-    /* original background */
-    /* color: black; */
-    /* blue background */
-    border-color: black; 
     color: white; 
-    border-style: solid;
     font-size: 0.8em; 
 }
   
 #coursesandprofessorssidebar a.active {
-    /* original background */
-    /* background-color: #999999; */
-    /* blue background */
     background-color: #9bcbeb;
     color: black;
    

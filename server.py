@@ -34,16 +34,16 @@ def home():
 def inputreview(): 
 	return render_template('reviewform.html')
 
-@app.route('/professor')
+'''@app.route('/professor')
 def professorpage(): 
     return render_template('professor_page.html')
 
 @app.route('/courses')
 def coursepage(): 
-	return render_template('coursepage_two.html')
+	return render_template('coursepage_two.html')'''
 
 #For a course page
-@app.route('/courses/<coursecode>', methods=['GET'])
+@app.route('/courses/<coursecode>')
 def courseinfo(coursecode):
 	course = next((course for course in course_data if course['courseCode'].lower() == coursecode.lower()), None)
 	if course is None:
