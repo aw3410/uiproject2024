@@ -88,7 +88,7 @@ def coursesFilter():
 	requirement = request.args.get('requirement')
 	semester = request.args.get('semester')
 	prerequisites = request.args.get('prerequisites')
-	exams_projects = request.args.get('examsProjects')
+	exams_projects = request.args.get('examOrProject')
 	attendance = request.args.get('attendance')
 	curve = request.args.get('curve')
 	industry_relevance = request.args.get('industryRelevance')
