@@ -42,7 +42,7 @@ function professorcollapsible() {
         toggletext.innerHTML = 'Professors +'
     }
 }
-function search(searchQuery){
+function search(){
     var professors = $('#listofprofessors a')
     var courses = $('#listofcourses a')
 
@@ -73,7 +73,7 @@ function search(searchQuery){
         }
     })
 
-
+    $('#searchbox').val('');
 }
 function redirectToReview() {
     window.location.href = '/reviewform';
