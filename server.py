@@ -208,10 +208,13 @@ def createnewcourseinfo(data):
 	level = data.get('level')
 	requirement = data.get('requirement')
 	prerequisites = data.get('prerequisites')
+	semester = data.get('semesters')
+	sem, _ = semester.split()
 		
 	course = {
 		"courseCode" : courseCode,
 		"courseName": courseName,
+		"reviewcount":1,
 		"industryRelevanceAverage": industry_relevance_rating, #this is the first rating
 		"industryRelevanceMaxRating": 5,
 		"industryRelevanceTotalScore": industry_relevance_rating,
@@ -219,8 +222,13 @@ def createnewcourseinfo(data):
 		"level": level,
 		"professors":[],
 		"requirement": requirement,
-		"prerequisites": prerequisites
+		"semestersOffered": [],
+
 	}
+	course["semestersOffered"].append(sem)
+	if prerequisites:
+		course["prerequisites"]=prerequisites
+
 	return course
 
 def createprofforcourse(data,initialWorkloadHours):
@@ -253,14 +261,14 @@ def createprofforcourse(data,initialWorkloadHours):
 			"gradesBreakdown": gradesBreakdown,
 			"additionalComments": [],
 			"semester": [],
-			"workload": initialWorkloadHours
+			"workload": initialWorkloadHours,
 		}
 
 	if semester:
 		sem, year = semester.split()
 		prof["semester"].append(sem)
 		prof["latestLogisticsSemester"] = sem
-		prof["latestLogisticsSemesterYear"] = year
+		prof["latestLogisticsSemesterYear"] = int(year)
 
 	if additionalcomments:
 		comment = {
@@ -280,18 +288,22 @@ def createprofforcourse(data,initialWorkloadHours):
 	if weekly_workload:
 		for workload in prof["workload"]:
 			if workload["workloadHours"] == weekly_workload:
-				workload["votes"]+=1
+				workload["votes"]=1
+				break
 	return prof
 
 def createnewprofinfo(data,initialRatingDistribution):
 	professor = data.get('professors')
 	professor_rating = data.get('professor_rating')
-   
+	_,lastname = professor.split()
+	
 	prof = {
+			"lastname": lastname.lower(),
 			"professorName": professor,
-			"overallRating": professor_rating/2,
+			"overallRating": round(professor_rating/2,2),
 			"totalRating": professor_rating,
 			"ratingVotes": 1,
+			"reviewcount": 1,
 			"ratingDistribution": initialRatingDistribution,
 			"courses":[]
 		}
@@ -300,7 +312,8 @@ def createnewprofinfo(data,initialRatingDistribution):
 		prof_rating= math.floor(professor_rating / 2)
 		for rating in prof["ratingDistribution"]:
 			if rating["rating"] == prof_rating:
-				rating["vote"]+=1
+				rating["vote"] = 1
+				break
 	return prof
 
 def createcourseforprof(data, initialWorkloadHours):
@@ -346,7 +359,7 @@ def createcourseforprof(data, initialWorkloadHours):
 		sem, year = semester.split()
 		course["semester"].append(sem)
 		course["latestLogisticsSemester"] = sem
-		course["latestLogisticsSemesterYear"] = year
+		course["latestLogisticsSemesterYear"]= int(year)
 	
 	if additionalcomments:
 		comment = {
@@ -366,9 +379,147 @@ def createcourseforprof(data, initialWorkloadHours):
 	if weekly_workload:
 		for workload in course["workload"]:
 			if workload["workloadHours"] == weekly_workload:
-				workload["votes"]+=1
+				workload["votes"]=1
+				break
 	return course
 
+def updateprof(data, prof):
+	weekly_workload = data.get('weeklyworkload')
+	data = request.get_json() 
+	semester = data.get('semesters')
+	feedback_sem, feedback_year = semester.split()
+	examprojectsdropdown = data.get('examorprojectdropdown')
+	professor_rating = data.get('professor_rating')
+	difficulty_rating = data.get('difficulty_rating')
+	curve = data.get('curve')
+	recordings = data.get('recordings')
+	attendance = data.get('attendance')
+	additionalcomments = data.get('additionalcomments')
+	gradesBreakdown = data.get('gradesBreakdown')
+
+	if professor_rating:
+			prof["ratingTotalScore"]+=professor_rating
+			prof["ratingTotalVotes"]+=1
+			prof["ratingAverage"]= round(prof["ratingTotalScore"]/prof["ratingTotalVotes"],2)
+
+	if difficulty_rating:
+		prof["difficultyTotalScore"]+=difficulty_rating
+		prof["difficultyTotalVotes"]+=1
+		prof["difficultyAverage"] = round(prof["difficultyTotalScore"]/prof["difficultyTotalVotes"],2)
+	
+	if semester:
+		if not any(semester==sem for sem in prof["semester"]):
+			prof["semester"].append(semester)
+
+	if additionalcomments:
+		prof["additionalComments"].append({
+			"comment":additionalcomments
+			})
+	
+	if weekly_workload:
+		for workload in prof["workload"]:
+			if workload["workloadHours"] == weekly_workload:
+				workload["votes"]+=1
+				
+	feedback_year = int(feedback_year)
+	#update logisitics if only this is the latest feedback we have
+	if (feedback_year > prof["latestLogisticsSemesterYear"] 
+		or 
+		(feedback_year==prof["latestLogisticsSemesterYear"] and
+		(
+			(feedback_sem=="Fall" and (prof["latestLogisticsSemester"]=="Summer" or prof["latestLogisticsSemester"]=="Spring" ))
+			or 
+			(feedback_sem=="Summer" and prof["latestLogisticsSemester"]=="Spring")
+		)
+		)
+	):
+		prof["latestLogisticsSemesterYear"] = feedback_year
+		prof["latestLogisticsSemester"] = feedback_sem
+		if gradesBreakdown:
+			prof["gradesBreakdown"]= gradesBreakdown
+		if recordings:
+			prof["recordings"] = recordings
+		if attendance:
+			prof["attendance"] = attendance
+		if examprojectsdropdown:
+			if examprojectsdropdown=="Both":
+				prof["examsProjectsBased"].append("Exams-Based")
+				prof["examsProjectsBased"].append("Project-Based")
+			elif examprojectsdropdown=="Neither":
+				pass
+			else:
+				prof["examsProjectsBased"].append(examprojectsdropdown)
+		if curve:
+			prof["curve"] = curve
+
+def updatecourse(data, course):
+	data = request.get_json() 
+	semester = data.get('semesters')
+	feedback_sem, feedback_year = semester.split()
+	examprojectsdropdown = data.get('examorprojectdropdown')
+	professor_rating = data.get('professor_rating')
+	difficulty_rating = data.get('difficulty_rating')
+	curve = data.get('curve')
+	recordings = data.get('recordings')
+	attendance = data.get('attendance')
+	additionalcomments = data.get('additionalcomments')
+	gradesBreakdown = data.get('gradesBreakdown')
+	weekly_workload = data.get('weeklyworkload')
+
+	if professor_rating:
+			course["ratingTotalScore"]+=professor_rating
+			course["ratingTotalVotes"]+=1
+			course["ratingAverage"]= round(course["ratingTotalScore"]/course["ratingTotalVotes"],2)
+
+	if difficulty_rating:
+		course["difficultyTotalScore"]+=difficulty_rating
+		course["difficultyTotalVotes"]+=1
+		course["difficultyAverage"] = round(course["difficultyTotalScore"]/course["difficultyTotalVotes"],2)
+	
+	if semester:
+		if not any(feedback_sem==sem for sem in course["semester"]):
+			course["semester"].append(semester)
+
+	if additionalcomments:
+		course["additionalComments"].append({
+			"comment":additionalcomments
+			})
+		
+	if weekly_workload:
+		for workload in course["workload"]:
+			if workload["workloadHours"] == weekly_workload:
+				workload["votes"]+=1
+				
+	feedback_year = int(feedback_year)
+	#update logisitics if only this is the latest feedback we have
+	if (feedback_year > course["latestLogisticsSemesterYear"] 
+		or 
+		(feedback_year==course["latestLogisticsSemesterYear"] and
+		(
+			(feedback_sem=="Fall" and (course["latestLogisticsSemester"]=="Summer" or course["latestLogisticsSemester"]=="Spring" ))
+			or 
+			(feedback_sem=="Summer" and course["latestLogisticsSemester"]=="Spring")
+		)
+		)
+	):
+		course["latestLogisticsSemesterYear"] = feedback_year
+		course["latestLogisticsSemester"] = feedback_sem
+		if gradesBreakdown:
+			course["gradesBreakdown"]= gradesBreakdown
+		if recordings:
+			course["recordings"] = recordings
+		if attendance:
+			course["attendance"] = attendance
+		if examprojectsdropdown:
+			if examprojectsdropdown=="Both":
+				course["examsProjectsBased"].append("Exams-Based")
+				course["examsProjectsBased"].append("Project-Based")
+			elif examprojectsdropdown=="Neither":
+				pass
+			else:
+				course["examsProjectsBased"].append(examprojectsdropdown)
+		if curve:
+			course["curve"] = curve
 
 @app.route('/submitreview', methods=['POST'])
 def submitreview():
@@ -377,31 +528,19 @@ def submitreview():
 	courseName = data.get('courseName')
 	professor = data.get('professors')
 	semester = data.get('semesters')
-	examprojectsdropdown = data.get('examorprojectdropdown')
 	professor_rating = data.get('professor_rating')
 	industry_relevance_rating = data.get('industry_relevance_rating')
-	difficulty_rating = data.get('difficulty_rating')
-	weekly_workload = data.get('weeklyworkload')
-	curve = data.get('curve')
-	recordings = data.get('recordings')
-	attendance = data.get('attendance')
-	additionalcomments = data.get('additionalcomments')
+	
 	# We don't get these fields from course feedback form, adding here so the APIs 
 	# can be used to add full new data (like if someone uploads the syllabus and we use that to update our data,
 	# we can use the same API to update)
-	level = data.get('level')
-	requirement = data.get('requirement')
 	prerequisites = data.get('prerequisites')
-	gradesBreakdown = data.get('gradesBreakdown')
-
-	print(courseCode)
-
 	initialWorkloadHours = [
-	{"workloadHours": "0-3 Hours", "votes": 0},
-	{"workloadHours": "3-6 Hours", "votes": 0},
-	{"workloadHours": "6-9 Hours", "votes": 0},
-	{"workloadHours": "9-12 Hours", "votes": 0},
-	{"workloadHours": "12+ Hours", "votes": 0}
+	{"workloadHours": "0-3", "votes": 0},
+	{"workloadHours": "3-6", "votes": 0},
+	{"workloadHours": "6-9", "votes": 0},
+	{"workloadHours": "9-12", "votes": 0},
+	{"workloadHours": "12+", "votes": 0}
 	]
 
 	initialRatingDistribution = [
@@ -417,82 +556,28 @@ def submitreview():
 	for course in course_data:
 		if course["courseCode"].lower() == courseCode.lower():
 			iscourseExists = True
-			feedback_sem, feedback_year = semester.split()
 			if industry_relevance_rating:
 				course["industryRelevanceTotalScore"]+= industry_relevance_rating
 				course["industryRelevanceTotalVotes"]+=1
-				course["industryRelevanceAverage"] = course["industryRelevanceTotalScore"]/course["industryRelevanceTotalVotes"]
+				course["industryRelevanceAverage"] = round(course["industryRelevanceTotalScore"] / course["industryRelevanceTotalVotes"], 2)
 
 			if semester:
-				if not any(semester == sem for sem in course["semesters"]):
-					course["semesters"].append(semester)
+				feedback_sem, _ = semester.split()
+				if not any(feedback_sem == sem for sem in course["semestersOffered"]):
+					course["semestersOffered"].append(feedback_sem)
 	
 			if prerequisites:
-				if not any(prereq == prerequisites for prereq in course["prerequisites"]):
-					course["prerequisites"].append(prerequisites)
-
+					course["prerequisites"]= prerequisites
+			
 			isProfExistsForCourse = False
 			for prof in course["professors"]:
 				if professor == prof["professorName"]:
 					isProfExistsForCourse = True
-					if professor_rating:
-						prof["ratingTotalScore"]+=professor_rating
-						prof["ratingTotalVotes"]+=1
-						prof["ratingAverage"]= prof["ratingTotalScore"]/prof["ratingTotalVotes"]
-						ratedistribution = math.floor(professor_rating/2)
-						for rating in prof["ratingDistribution"]:
-							if rating["rating"] == ratedistribution:
-								rating["vote"]+=1
+					updateprof(data, prof)
+					
 
-					if difficulty_rating:
-						prof["difficultyTotalScore"]+=difficulty_rating
-						prof["difficultyTotalVotes"]+=1
-						prof["difficultyAverage"] = prof["difficultyTotalScore"]/prof["difficultyTotalVotes"]
-				
-					if semester:
-						if not any(semester==sem for sem in prof["semester"]):
-							prof["semester"].append(semester)
-				
-					if weekly_workload:
-						for workload in prof["workload"]:
-							if workload["workloadHours"] == weekly_workload:
-								workload["votes"]+=1
-
-					if additionalcomments:
-						prof["additionalComments"].append({
-							"comment":additionalcomments
-							})
-					#update logisitics if only this is the latest feedback we have
-					if (feedback_year > prof["latestLogisticsSemesterYear"] 
-						or 
-						(feedback_year==prof["latestLogisticsSemesterYear"] and
-						(
-							(feedback_sem=="Fall" and (prof["latestLogisticsSemester"]=="Summer" or prof["latestLogisticsSemester"]=="Spring" ))
-							or 
-							(feedback_sem=="Summer" and prof["latestLogisticsSemester"]=="Spring")
-						)
-						)
-					):
-						prof["latestLogisticsSemesterYear"] = feedback_year
-						prof["latestLogisticsSemester"] = feedback_sem
-						if gradesBreakdown:
-							prof["gradesBreakdown"]= gradesBreakdown
-						if recordings:
-							prof["recordings"] = recordings
-						if attendance:
-							prof["attendance"] = attendance
-						if examprojectsdropdown:
-							if examprojectsdropdown=="Both":
-								prof["examsProjectsBased"].append("Exams-Based")
-								prof["examsProjectsBased"].append("Project-Based")
-							elif examprojectsdropdown=="Neither":
-								pass
-							else:
-								prof["examsProjectsBased"].append(examprojectsdropdown)
-						if curve:
-							prof["curve"] = curve
-			
 			if not isProfExistsForCourse:
+				course["reviewcount"] = 2 #adding new prof for existing course
 				#new prof for the course, add new prof is course["professors"]
 				prof = createprofforcourse(data,initialWorkloadHours)
 				course["professors"].append(prof)
@@ -500,8 +585,9 @@ def submitreview():
 	if not iscourseExists:
 		course_list.append({
 			"courseCode": courseCode,
-			"courseName": courseCode,
-			"courseURL": f"/courses/{courseCode}"
+			"courseName": courseName,
+			"courseURL": f"/courses/{courseCode}",
+			"reviewcount": 1
 		})
 		#Update course info
 		course = createnewcourseinfo(data)
@@ -521,73 +607,25 @@ def submitreview():
 				for rating in prof["ratingDistribution"]:
 					if rating["rating"] == ratedistribution:
 						rating["vote"]+=1
-					totalRating+= rating["rating"] * rating["vote"]
+					totalRating+= (rating["rating"] * rating["vote"])
 				prof["totalRating"] = totalRating
 				prof["ratingVotes"] += 1
-				prof["overallRating"] = prof["totalRating"]/prof["ratingVotes"]
+				prof["overallRating"] = round(prof["totalRating"]/prof["ratingVotes"],2)
 			isCourseExistsForProf = False 
 			for course in prof["courses"]:
 				if course["courseCode"] == courseCode:
 					isCourseExistsForProf = True
-					if professor_rating:
-						course["ratingTotalScore"]+= professor_rating
-						course["ratingTotalVotes"]+=1
-						course["ratingAverage"] = course["ratingTotalScore"]/course["ratingTotalVotes"]
-					if difficulty_rating:
-						course["difficultyTotalScore"]+=difficulty_rating
-						course["difficultyTotalVotes"]+=1
-						course["difficultyAverage"] = course["difficultyTotalScore"]/course["difficultyTotalVotes"]
-				
-					if semester:
-						if not any(semester==sem for sem in course["semester"]):
-							course["semester"].append(semester)
-				
-					if weekly_workload:
-						for workload in course["workload"]:
-							if workload["workloadHours"] == weekly_workload:
-								workload["votes"]+=1
-
-					if additionalcomments:
-						course["additionalComments"].append({
-							"comment":additionalcomments
-							})
-					#update logisitics if only this is the latest feedback we have
-					if (feedback_year > course["latestLogisticsSemesterYear"] 
-						or 
-						(feedback_year==course["latestLogisticsSemesterYear"] and
-						(
-							(feedback_sem=="Fall" and (course["latestLogisticsSemester"]=="Summer" or course["latestLogisticsSemester"]=="Spring" ))
-							or 
-							(feedback_sem=="Summer" and course["latestLogisticsSemester"]=="Spring")
-						)
-						)
-					):
-						course["latestLogisticsSemesterYear"] = feedback_year
-						course["latestLogisticsSemester"] = feedback_sem
-						if gradesBreakdown:
-							course["gradesBreakdown"]= gradesBreakdown
-						if recordings:
-							course["recordings"] = recordings
-						if attendance:
-							course["attendance"] = attendance
-						if examprojectsdropdown:
-							if examprojectsdropdown=="Both":
-								course["examsProjectsBased"].append("Exams-Based")
-								course["examsProjectsBased"].append("Project-Based")
-							elif examprojectsdropdown=="Neither":
-								pass
-							else:
-								course["examsProjectsBased"].append(examprojectsdropdown)
-						if curve:
-							course["curve"] = curve
+					updatecourse(data,course)
 			
 			if not isCourseExistsForProf:
+				prof["reviewcount"] = 2 #adding a new course for existing prof
 				course = createcourseforprof(data,initialWorkloadHours)
 				prof["courses"].append(course)	
 				
 	# Update prof list to add new professor
 	if not isProfExistsInProfData:
-		prof_list.append({"professorName": professor})
+		_,lastname = professor.split()
+		prof_list.append({"professorName": professor,"reviewcount":1,"lastname":lastname.lower()})
 
 		#add new professor to professor_course_data
 		prof = createnewprofinfo(data, initialRatingDistribution)

@@ -117,7 +117,7 @@ GET: http://127.0.0.1:5000/search?query=COMS3
     ]
 }
 
-GET: http://127.0.0.1:5000/submitreview
+POST: http://127.0.0.1:5000/submitreview
 Request Body:
 {
   "courseCode": "COMS4710",
@@ -128,7 +128,7 @@ Request Body:
   "professor_rating": 8,
   "industry_relevance_rating": 4,
   "difficulty_rating": 6,
-  "weeklyworkload": "3-6 Hours",
+  "weeklyworkload": "3-6",
   "curve": true,
   "recordings": "Yes",
   "attendance": "Not graded",
@@ -136,5 +136,57 @@ Request Body:
   "level": "Undergraduate",
   "requirement": "Core",
   "prerequisites": "None",
-  "gradesBreakdown": "Homework: 40%, Midterm: 30%, Final: 30%"
+  "gradesBreakdown": [{
+					"color": "yellow",
+					"classcolor": "homework",
+					"component": "Assignments",
+					"percentage": 10
+				},
+				{
+					"color": "#EA9999",
+					"classcolor": "exam1",
+					"component": "Exam1",
+					"percentage": 30
+				},
+				{
+					"color": "#CF2A27",
+					"classcolor": "exam2",
+					"component": "Exam2",
+					"percentage": 30
+				},
+				{
+					"color": "#93C47D",
+					"classcolor": "attendance",
+					"component": "Project",
+					"percentage": 30
+				}
+
+			]
+}
+
+POST: http://127.0.0.1:5000/submitreview
+{
+  "courseCode": "COMS6156",
+  "courseName": "Cloud Computing",
+  "professors": "Donald Ferguson",
+  "semesters": "Fall 2023",
+  "examorprojectdropdown": "Projects-Based",
+  "professor_rating": 8,
+  "industry_relevance_rating": 4,
+  "difficulty_rating": 3,
+  "weeklyworkload": "0-3 Hours",
+  "curve": true,
+  "recordings": "Yes",
+  "attendance": "Not graded",
+  "additionalcomments": "Very practical but you need to be motivated to learn more. Easy to score an A",
+  "level": "Graduate",
+  "requirement": "Elective",
+  "prerequisites": "None",
+  "gradesBreakdown": [{
+    "classcolor": "homework",
+    "color": "yellow",
+    "component": "Project",
+    "percentage": 100
+  
+  }]
 }
