@@ -208,8 +208,8 @@ def createnewcourseinfo(data):
 	level = data.get('level')
 	requirement = data.get('requirement')
 	prerequisites = data.get('prerequisites')
-	semester = data.get('semesters')
-	sem, _ = semester.split()
+	semester = data.get('semester')
+
 		
 	course = {
 		"courseCode" : courseCode,
@@ -265,7 +265,7 @@ def createprofforcourse(data,initialWorkloadHours):
 		}
 
 	if semester:
-		sem, year = semester.split()
+		sem, year = semester.split(' ')
 		prof["semester"].append(sem)
 		prof["latestLogisticsSemester"] = sem
 		prof["latestLogisticsSemesterYear"] = int(year)
@@ -386,8 +386,8 @@ def createcourseforprof(data, initialWorkloadHours):
 def updateprof(data, prof):
 	weekly_workload = data.get('weeklyworkload')
 	data = request.get_json() 
-	semester = data.get('semesters')
-	feedback_sem, feedback_year = semester.split()
+	semester = data.get('semester')
+	feedback_sem, feedback_year = semester.split(' ')
 	examprojectsdropdown = data.get('examorprojectdropdown')
 	professor_rating = data.get('professor_rating')
 	difficulty_rating = data.get('difficulty_rating')
@@ -454,8 +454,8 @@ def updateprof(data, prof):
 
 def updatecourse(data, course):
 	data = request.get_json() 
-	semester = data.get('semesters')
-	feedback_sem, feedback_year = semester.split()
+	semester = data.get('semester')
+	feedback_sem, feedback_year = semester.split(' ')
 	examprojectsdropdown = data.get('examorprojectdropdown')
 	professor_rating = data.get('professor_rating')
 	difficulty_rating = data.get('difficulty_rating')
@@ -524,12 +524,13 @@ def updatecourse(data, course):
 @app.route('/submitreview', methods=['POST'])
 def submitreview():
 	data = request.get_json() 
+	print(data)
 	courseCode = data.get('courseCode')
 	courseName = data.get('courseName')
-	professor = data.get('professors')
-	semester = data.get('semesters')
-	professor_rating = data.get('professor_rating')
-	industry_relevance_rating = data.get('industry_relevance_rating')
+	professor = data.get('professor')
+	semester = data.get('semester')
+	professor_rating = int(data.get('professorRating'))
+	industry_relevance_rating = int(data.get('industryRelevance'))
 	
 	# We don't get these fields from course feedback form, adding here so the APIs 
 	# can be used to add full new data (like if someone uploads the syllabus and we use that to update our data,
@@ -562,9 +563,7 @@ def submitreview():
 				course["industryRelevanceAverage"] = round(course["industryRelevanceTotalScore"] / course["industryRelevanceTotalVotes"], 2)
 
 			if semester:
-				feedback_sem, _ = semester.split()
-				if not any(feedback_sem == sem for sem in course["semestersOffered"]):
-					course["semestersOffered"].append(feedback_sem)
+				course["semestersOffered"].append(semester)
 	
 			if prerequisites:
 					course["prerequisites"]= prerequisites

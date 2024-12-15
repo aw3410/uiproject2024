@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename = 'reviewform.css')}}" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename = 'reviewform.js')}}"></script>
 
 
 
@@ -22,14 +24,12 @@
         <button id="homebutton"><i class="fa fa-home"></i></button>
     </span>
     <span class="coursefeedbackformline">
-       
         <!-- TODO: to make it dynamic, we can fill the courses from GET /courses API-->
         <input list="dropdowncourses" name="courses" class="dropdowninput" placeholder="Course">
         <datalist id="dropdowncourses">
             <option value="COMS1004: Introduction to Computer Science/ Programming in Java">
             <option value="COMS3203: Discrete Mathematics">
             <option value="COMS4701: Artificial Intelligence">
-
         </datalist>
         <!-- <label for "professors">Professors:</label> -->
          <!-- TODO: to make it dynamic, we can fill the professors from GET /professors API-->
@@ -93,7 +93,7 @@
             </tr>
         </table>
     </div>
-    <div class="ratescale" id="industry_relevance_rating">
+    <div class="ratescale" id="industry_relevance">
         <label for "rate5">In your opinion, was the class useful/relevant for industry work?</label>
         <table class="rate5">
             <tr>
@@ -203,7 +203,7 @@
         <a id="gotohomepage" href="/">
             <i class="fa fa-home"></i> Go to Homepage
         </a>
-        <a id="gotohomepage" href="/">
+        <a id="submitbutton" href="/">
             Submit
         </a>
     </span>

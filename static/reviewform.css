@@ -145,9 +145,12 @@ label{
 }
 
 #submitbutton{
-    padding: 1%; 
-    background-color: #9bcbeb;
     color:white;
+    display: inline-block;
+    background-color: #9bcbeb;
+    padding: 1%; 
+    text-align: center;
+    text-decoration: none;
 }
 
 .submitline{
