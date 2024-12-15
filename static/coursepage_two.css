@@ -84,6 +84,29 @@ header.websitename{
     padding-top: 1%;
     font-size: 1.5em;
 }
+.course-entry {
+    display: flex;
+    flex-direction: column;
+    background-color: #003865;
+    border: 1px solid black;
+    color: white;
+}
+.course-entry a {
+    text-decoration: none;
+    color: white;
+}
+.course-entry button{
+    align-items: center;
+    margin-bottom:8px;
+    max-width: 80%;
+    margin-left:5px;
+}
+.course-entry button:hover{
+    align-items: center;
+    margin-bottom:5px;
+    transition:0.3s;
+    background-color:#B3B3B3;
+}
 
 #disclaimerandreview {
     font-size: 0.5em;
@@ -100,7 +123,10 @@ header.websitename{
 }
 
 .reviewbutton {
-    font-size: 1em;
+    background-color: white;
+    color: #003865;
+    border: 1px solid #003865;
+    cursor: pointer;
 }
 
 #contentreviewbutton{
@@ -315,19 +341,12 @@ header.websitename{
     display: block;
     padding: 8%;
     text-decoration: none;
-    /* original background */
-    /* color: black; */
-    /* blue background */
-    border-color: black; 
     color: white; 
-    border-style: solid;
     font-size: 0.8em; 
 }
+
   
 #coursesandprofessorssidebar a.active {
-    /* original background */
-    /* background-color: #999999; */
-    /* blue background */
     background-color: #9bcbeb;
     color: black;
    

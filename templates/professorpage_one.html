@@ -27,36 +27,46 @@
                         +</button>
                 </div>
                 <div id="listofcourses" class="hidden">
-                    <a href="courses/coms1004">COMS1004: Introduction to Computer Science/ Programming in Java
-                        <button type="button" class="reviewbutton">Leave a Review</button>
-                    </a>
-                    <a href="courses/coms3203">COMS3203: Discrete Mathemetatics
-                        <button type="button" class="reviewbutton">Leave a Review</button>
-                    </a>
-                    <a href="courses/coms4701">COMS4701: Artificial Intelligence
-                        <button type="button" class="reviewbutton">Leave a Review</button>
-                    </a>
-                    <div class="missing">Course Missing?
-                        <a class="missinglink" href="reviewform">Leave a Review</a>
+                    <div class="course-entry">
+                        <a href="/courses/coms1004">COMS1004: Introduction to Computer Science/ Programming in Java</a>
+                        <button type="button" class="reviewbutton" onclick="redirectToReview()">Leave a Review</button>
+                    </div>
+                    <div class="course-entry">
+                        <a href="/courses/coms3203">COMS3203: Discrete Mathematics</a>
+                        <button type="button" class="reviewbutton" onclick="redirectToReview()">Leave a Review</button>
+                    </div>
+                    <div class="course-entry">
+                        <a href="/courses/coms4701">COMS4701: Artificial Intelligence</a>
+                        <button type="button" class="reviewbutton" onclick="redirectToReview()">Leave a Review</button>
+                    </div>
+                    <div class="missing">
+                        Course Missing?
+                        <a class="missinglink" href="/reviewform">Leave a Review</a>
                     </div>
                 </div>
             </div>
-            <div class="coursesandprofessorscollapsible">
-                <button type="button" id='professorbutton' class="collapsiblebutton collapsibletextsize">Professors
-                    +</button>
-            </div>
-            <div id="listofprofessors" class="hidden">
-                <a href="/professors/blaer">Paul Blaer
-                    <button type="button" class="reviewbutton">Leave a Review</button>
-                </a>
-                <a href="/professors/cannon">Adam Cannon
-                    <button type="button" class="reviewbutton">Leave a Review</button>
-                </a>
-                <a href="/professors/dear">Tony Dear
-                    <button type="button" class="reviewbutton">Leave a Review</button>
-                </a>
-                <div class="missing">Professor Missing?
-                    <a class="missinglink" href="/reviewform">Leave a Review</a>
+            <div id="professorsidebar">
+                <div class="coursesandprofessorscollapsible">
+                    <button type="button" id='professorbutton' class="collapsiblebutton collapsibletextsize">Professors
+                        +</button>
+                </div>
+                <div id = "listofprofessors" class="hidden">
+                    <div class="course-entry">
+                        <a href="/professors/blaer">Paul Blaer</a>
+                            <button type="button" class="reviewbutton" onclick="redirectToReview()">Leave a Review</button>
+                    </div>
+                    <div class="course-entry">
+                        <a href="/professors/cannon">Adam Cannon</a>
+                            <button type="button" class="reviewbutton" onclick="redirectToReview()">Leave a Review</button>
+                    </div>
+                    <div class="course-entry">
+                        <a href="/professors/dear">Tony Dear</a>
+                            <button type="button" class="reviewbutton" onclick="redirectToReview()">Leave a Review</button>
+                    </div>
+                    <div class="missing">Professor Missing?
+                        <!-- <button type="button" class="reviewbutton missing">Leave a Review</button> -->
+                        <a class="missinglink" href="/reviewform">Leave a Review</a>
+                    </div>
                 </div>
             </div>
         </div>

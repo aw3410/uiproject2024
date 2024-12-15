@@ -10,7 +10,9 @@ function advancedsearch() {
         advancedsearchdiv.show(); 
     }
 }
-
+function redirectToReview() {
+    window.location.href = '/reviewform';
+}
 function coursecollapsible() {
     var courses = $('#listofcourses')
     var toggletext = document.getElementById('coursebutton')

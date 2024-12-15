@@ -188,6 +188,29 @@ tbody{
     color: white; 
     background-color: #003865;
 }
+.course-entry {
+    display: flex;
+    flex-direction: column;
+    background-color: #003865;
+    border: 1px solid black;
+    color: white;
+}
+.course-entry a {
+    text-decoration: none;
+    color: white;
+}
+.course-entry button{
+    align-items: center;
+    margin-bottom:8px;
+    max-width: 80%;
+    margin-left:5px;
+}
+.course-entry button:hover{
+    align-items: center;
+    margin-bottom:5px;
+    transition:0.3s;
+    background-color:#B3B3B3;
+}
 
 
 #generalcourseinformationcontainer {
