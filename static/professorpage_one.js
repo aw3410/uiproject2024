@@ -133,18 +133,21 @@ $(document).ready(function () {
         $('#averagestar').text(`${prof.overallRating}/5 based on ${prof.ratingVotes} reviews`)
 
         let fullStars = Math.floor(prof.overallRating); 
+        const maxStars = 5;
 
         let starsHtml = ''
         for (let i=0; i<fullStars; i++){
             starsHtml += `<span class="fa fa-star"></span>`
         }
+
         if (prof.overallRating % 1 >= 0.5){
             starsHtml += `<span class="fa fa-star-half-full"></span>`
-            if (Number(fullStars) + 0.5 < 4.5){
-                starHtml += `<span class="fa fa-star"></span>`;
-            }
         }
-        console.log(starsHtml)
+        const remainingStars = maxStars - fullStars - (prof.overallRating % 1 >= 0.5 ? 1 : 0);
+        for (let i = 0; i < remainingStars; i++) {
+            starsHtml += `<span class="fa fa-star-o"></span>`;
+        }
+
         $('#stars').append(starsHtml);
 
         const totalVotes = Math.max(prof.ratingVotes) || 1; // Avoid division by zero
