@@ -434,8 +434,8 @@
 					"percentage": 30
 				},
 				{
-					"color": "#93C47D",
-					"classcolor": "attendance",
+					"color": "lightblue",
+					"classcolor": "project1",
 					"component": "Project",
 					"percentage": 30
 				}
