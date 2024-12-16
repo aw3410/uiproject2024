@@ -10,3 +10,5 @@ Professor page: '/professor'
 Course page: '/course'
 
 You can also navigate through the course/professor page by entering a search or using the sidebar. The review form can be reached through the sidebar (with the review buttons), through the homepage, and through the course/professor review pages. 
+
+We have also cited some code that we've used from websites such as geeksforgeeks and w3schools in the code itself.
