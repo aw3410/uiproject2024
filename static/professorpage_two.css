@@ -158,10 +158,6 @@ tbody{
     height: 100%; 
 }
 
-
-
-
-
 #disclaimerandreview {
     font-size: 0.5em;
 }
@@ -227,6 +223,19 @@ tbody{
     padding-top: 1%;
 }
 
+
+.boxeswithworstrating {
+    border-style: solid;
+    background-color: red;
+    width: 15%;
+}
+
+.boxeswithbadrating{
+    border-style: solid;
+    background-color: #FF6961;
+    width: 15%;
+}
+
 .boxeswithmediumrating {
     border-style: solid;
     background-color: #FFE599;
@@ -237,6 +246,12 @@ tbody{
     border-style: solid;
     background-color: #B6D7A8;
     width: 15%;
+}
+
+.boxeswithbestrating {
+    background-color: #6AA84F;
+    border-style: solid;
+    width: 15%
 }
 
 .vote {
@@ -295,11 +310,6 @@ tbody{
     width: 100%; 
 }
 
-.boxeswithbestrating {
-    background-color: #6AA84F;
-    border-style: solid;
-    width: 15%
-}
 
 .box {
     border-style: solid;

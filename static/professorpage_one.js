@@ -90,6 +90,42 @@ function addbarchart(professors) {
 
 }
 
+function ratingscore(rating) {
+    if (rating < 2){
+        return 'boxeswithworstrating';
+    }
+    else if (rating < 4 && rating >= 2){
+        return 'boxeswithbadrating'
+    }
+    else if (rating >= 4 && rating <= 6) {
+        return 'boxeswithmediumrating';
+    } 
+    else if (rating > 6 && rating <= 8) {
+        return 'boxeswithgoodrating';
+    } 
+    else if (rating > 8){
+        return 'boxeswithbestrating';
+    }
+}
+
+function difficultyscore(rating){
+    if (rating < 2){
+        return 'boxeswithbestrating';
+    }
+    else if (rating < 4 && rating >= 2){
+        return 'boxeswithgoodrating'
+    }
+    else if (rating >= 4 && rating <= 6) {
+        return 'boxeswithmediumrating';
+    } 
+    else if (rating > 6 && rating <= 8) {
+        return 'boxeswithbadrating';
+    } 
+    else if (rating > 8){
+        return 'boxeswithworstrating';
+    }
+}
+
 $(document).ready(function () {
     if (data){
         const prof = data;
@@ -133,22 +169,26 @@ $(document).ready(function () {
         prof.courses.forEach((course, index) => {
             const piechartID = `piechart-${index}`;
             const barchartID = `barchart-${index}`;
+            const ratingclass = ratingscore(course.ratingAverage);
+            const difficultyclass = difficultyscore(course.difficultyAverage);
+            const curveclass = course.curve ? 'boxeswithgoodrating' : 'boxeswithbadrating';
+
 
             profDetailsHtml += `     
                 <div class="onecourse">
                      <div class="coursename">${course.courseCode}:${course.courseName}</div>
                     <div class="courseinformation">
                     <span class="courseinformationline">
-                        <div class="boxeswithbestrating">
+                        <div class="${ratingclass}">
                             <p class="boxtext">Rating</p>
                             <p class="vote">${course.ratingAverage || 'N/A'}/10</p>
                             <p class="boxtext">out of ${course.ratingTotalVotes || 0} votes</p>
                         </div>
-                        <div class="boxeswithgoodrating">
+                        <div class="${curveclass}">
                             <p class="boxtext">Curve</p>
                             <p class="vote">${course.curve ? 'Yes' : 'No'}</p>
                         </div>
-                        <div class="boxeswithbestrating">
+                        <div class="${difficultyclass}">
                             <p class="boxtext">Difficulty</p>
                             <p class="vote">${course.difficultyAverage || 'N/A'}/10</p>
                             <p class="boxtext">out of ${course.difficultyTotalVotes || 0} votes</p>
