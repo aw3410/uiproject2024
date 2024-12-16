@@ -1,7 +1,7 @@
 # ui-project-fall24
 What Culpa Doesn't Tell You - CS Edition
 
-We used HTML, CSS, and python to develop these interfaces. We store our changes using a Flask backend. We have used JavaScript to add functionality to our project. This includes button functionality, navigation and search functionality, course review form functionality, and more. The course and professor pages are rendered dynamically with data in our Flask database. To run our code, navigate into the ui-project-fall24-main folder, and run python server.py in the command line. 
+We used HTML, CSS, and Python to develop these interfaces. We store our changes using a Flask backend. We have used JavaScript to add functionality to our project. This includes button functionality, navigation and search functionality, course review form functionality, and more. The course and professor pages are rendered dynamically with data in our Flask database. To run our code, navigate into the ui-project-fall24-main folder, and run python server.py in the command line. 
 
 The routes that should be at the end of the URL for each page are as follows: 
 Homepage : '/'
