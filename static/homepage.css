@@ -99,10 +99,9 @@ header.websitename{
 }
 
 #reviewbutton {
-    background-color: white;
     color: #003865;
-    border: 1px solid #003865;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #reviewbutton:hover {
