@@ -98,14 +98,14 @@ header.websitename{
     color: #757171;
 }
 
-.reviewbutton {
+#reviewbutton {
     background-color: white;
     color: #003865;
     border: 1px solid #003865;
     cursor: pointer;
 }
 
-.reviewbutton:hover {
+#reviewbutton:hover {
     background-color: #003865;
     color: white;
 }
